@@ -17,10 +17,7 @@
 	
 	h1, h2, h3
 	{
-		margin: 0;
-		padding: 0;
-		font-weight: 600;
-		color: #333333;
+
 	}
 	
 	p, ol, ul
@@ -363,7 +360,7 @@
 	
 	.title h2
 	{
-		text-transform: lowercase;
+
 		font-size: 2.8em;
 	}
 	
@@ -382,6 +379,7 @@
 		position: relative;
 		float: left;
 		width: 20%;
+        height: 100%;
 		padding: 3em 0em;
 	}
 
@@ -391,12 +389,14 @@
 
 	#logo
 	{
+
 		text-align: center;
 		margin-bottom: 4em;
 	}
 	
 	#logo h1
 	{
+
 		display: block;
 	}
 	
@@ -432,6 +432,7 @@
 
 	#menu
 	{
+
 	}
 	
 	#menu ul
@@ -451,13 +452,15 @@
 		text-decoration:  none;
 		text-transform: uppercase;
 		font-weight: 700;
-		min-width: 75px;
+
+
 
 		color: rgba(255,255,255,0.5);
 	}
 	
 	#menu li:hover a, #menu li.active a, #menu li.active span
 	{
+
 	}
 	
 	#menu .current_page_item a
@@ -496,11 +499,25 @@
 	{
 		float: right;
 		width: 80%;
+        height: 1000px;
 		min-width: 500px;
 		background: #FFF;
 		border-top: 6px solid #2980b9;
 		text-align: center;
 	}
+
+    #passage
+    {
+        font-weight: bold;
+
+    }
+
+.resetBtn{
+    position: relative;
+    top:0;
+    right: 0;
+    margin-right: 30px;
+}
 
 /*********************************************************************************/
 /* Featured                                                                      */
@@ -536,11 +553,11 @@
 
 	#copyright
 	{
-		overflow: hidden;
-		padding: 5em 0em;
-		border-top: 1px solid rgba(0,0,0,0.08);
+        margin-left:auto;
+        margin-right:auto;
+        margin-top:16em;
 	}
-	
+
 	#copyright span
 	{
 		display: block;
