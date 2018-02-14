@@ -463,7 +463,7 @@ function StopTime(){
     stopped = 1;
     clearInterval(t);
     var netWPM = calcNetWPM();
-    $('h3').replaceWith("<h3>Your typing speed is : " + netWPM + " WPM." + "Errors: " + numErrors + " Time:" + seconds/10 + " seconds");
+    $('h3').replaceWith("<h3>Your typing speed of " + netWPM + " was taken in " + seconds/10 + " seconds");
     $('h3').css('color', 'green');
     seconds = 0;
     timer = 0;
