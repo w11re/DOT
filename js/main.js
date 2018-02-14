@@ -1,4 +1,3 @@
-//Refer to this for formula on calculating WPM:
 //http://www.speedtypingonline.com/typing-equations
 
 var tempWords = genWords();
@@ -7,11 +6,11 @@ var wordLib = genLib();
 //tasks to run upon page launch
 $(document).ready(function(){
   $( ".alert" ).hide();
-  genParagraph();//generate paragraph upon launch
+  genParagraph();
 
-  //when reset button is clicked
+
   $(".resetBtn").click(function(){
-    //reset every variable
+
     currWord = 0;
     currIndex = 0;
     numErrors = 0;
@@ -21,19 +20,17 @@ $(document).ready(function(){
     seconds = 0;
     stopped = 0;
 
-    $('h3').replaceWith("<h3>Reseted</h3>");//reset header
-    $( ".alert" ).hide();//hide the alert box
-    $('#userInput').val('');//clear the text area
+    $('h3').replaceWith("<h3>Reseted</h3>");
+    $( ".alert" ).hide();
+    $('#userInput').val('');
 
-    tempWords = genWords();//get new words for tempWords
-    wordLib = [];//empty the 2D char array
-    wordLib = genLib();//refill the 2D char array
+    tempWords = genWords();
+    wordLib = [];
+    wordLib = genLib();
 
-    genParagraph();//display the paragraph
+    genParagraph();
   });
 
-  //display an alert if the document is clicked
-  //while timer is still running
   $(document).click(function(e) {
     if(seconds > 0){
       $( ".alert" ).show("fast");
@@ -42,15 +39,13 @@ $(document).ready(function(){
 
 });
 
-//append the contents of tempWords
-//to the paragraph area
+
 function genParagraph(){
 
-  document.getElementById("userInput").select();//focus the textarea
+  document.getElementById("userInput").select();
 
-  $(".paragraph").empty();//clear the div
+  $(".paragraph").empty();
 
-  //generate paragraph
   $(".paragraph").append("<p>");
   $.each(tempWords, function( index, value ) {
     $(".paragraph").append(value + " ");
@@ -59,12 +54,8 @@ function genParagraph(){
 
 }
 
-//returns an array of 60 words that
-//is generated randomly from the
-//wordList array
 function genWords(){
   var wordList = [
-    // Borrowed from xkcd password generator which borrowed it from wherever
     "ability","able","aboard","about","above","accept","accident","according",
     "account","accurate","acres","across","act","action","active","activity",
     "actual","actually","add","addition","additional","adjective","adult","adventure",
@@ -319,17 +310,13 @@ function genWords(){
       return Math.floor(Math.random() * lessThan);
     }
 
-    // No arguments = generate one word
     if (typeof(options) === 'undefined') {
       return word();
     }
 
-    // Just a number = return that many words
     if (typeof(options) === 'number') {
       options = { exactly: options };
     }
-
-    // options supported: exactly, min, max, join
 
     if (options.exactly) {
       options.min = options.exactly;
@@ -347,23 +334,20 @@ function genWords(){
   }
 
   words.wordList = wordList;
-  return words(10); //@change 5 to #words
+  return words(10);
 }
 
 var timer = 0;
-var seconds = 0;//time elapsed
+var seconds = 0;
 var t;
 var stopped = 0;
 function Timer(event){
-    //clear timer if the reset button is
-    //clicked
     $(".resetBtn").click(function(){
       clearInterval(t);
       seconds = 0;
       timer = 0;
     });
 
-    //start the timer (called from onkeypress in index.html)
     if(timer == 0 && event.which!=13 && stopped == 0){
       $('h3').replaceWith("<h3>Time elapsed: " + seconds/10 + " seconds.</h3>");
       timer = 1;
@@ -373,13 +357,11 @@ function Timer(event){
 
 }
 
-//timer
 function startTime () {
     seconds = seconds + 1;
     $('h3').replaceWith("<h3>Time elapsed: " + seconds/10 + " seconds.</h3>");
 }
 
-//creates a 2D char array of the original tempWords array
 function genLib () {
     var charArray = [];
     for(var i = 0; i < 10; i++){ //@ change 5 to #words
@@ -388,8 +370,6 @@ function genLib () {
     return charArray;
 }
 
-//calls both the timer and error counter
-//from onkeypress in index.html
 function CallBoth(event){
     Errors(event);
     Timer(event);
@@ -404,7 +384,7 @@ var errorArray = []; //array that stores the error at the specific index
 var atEnd = 0; //increases after the end of the text is reached
 var typedEntries = 0;//the number of typed characters (to be used to calculate WPM)
 
-//counts errors while typing
+
 function Errors(event){
     if(stopped == 1){
         return;
