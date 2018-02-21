@@ -19,6 +19,7 @@
         <!--jQuery-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <!--Local script-->
+        <script src="js/Typing.js"></script>
         <script src="js/UserProfile.js"></script>
         <!--[if IE 6]>
         <link href="default_ie6.css" rel="stylesheet" type="text/css" />
@@ -59,22 +60,25 @@
                 </div>
                 <div id="menu">
                     <ul>
-                        <li class="current_page_item" title="DOT"><a href="#">Homepage</a></li>
-                        <li><a href="Typing.html" title="Start Typing">Typing Tests ></a></li>
+                        <li><a href="index.html" title="DOT">Homepage</a></li>
+                        <li class="current_page_item"><a href="#" title="Start Typing">Typing Tests ></a></li>
                         <li><a href="Profile.html" title="View Profile">Profile ></a></li>
                     </ul>
                 </div>
             </div>
             <div id="main">
                 <div class="title">
-                    <h2>Welcome to DOT</h2>
+                    <h2>Simple Type Test below</h2>
                 </div>
-                <img src="images/ellipsis.png" alt="Separator between title and content" style="width:50px;height:50px">
-                <div class="about">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis at tellus at urna. Ac tortor vitae purus faucibus ornare suspendisse sed nisi. Sapien faucibus et molestie ac. Purus semper eget duis at tellus at urna. Sit amet purus gravida quis blandit. Placerat vestibulum lectus mauris ultrices eros in. Volutpat lacus laoreet non curabitur gravida. Vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Donec et odio pellentesque diam. Nulla facilisi morbi tempus iaculis urna id volutpat lacus. Ultricies leo integer malesuada nunc vel risus. Molestie ac feugiat sed lectus. Pellentesque id nibh tortor id aliquet lectus proin. Tristique nulla aliquet enim tortor at auctor urna nunc id. Faucibus nisl tincidunt eget nullam non. Nisi scelerisque eu ultrices vitae auctor eu. Et pharetra pharetra massa massa ultricies.</p>
-                <p>Quam id leo in vitae. Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Sit amet purus gravida quis blandit turpis cursus in. Laoreet non curabitur gravida arcu ac. Eget arcu dictum varius duis at consectetur lorem donec. Id semper risus in hendrerit gravida rutrum quisque non tellus. Ac feugiat sed lectus vestibulum mattis. Orci dapibus ultrices in iaculis nunc sed augue. Urna neque viverra justo nec ultrices. Vitae justo eget magna fermentum iaculis eu non diam phasellus. Tortor consequat id porta nibh venenatis. Convallis aenean et tortor at risus viverra adipiscing. Metus aliquam eleifend mi in nulla posuere. Netus et malesuada fames ac. Nibh sit amet commodo nulla facilisi nullam vehicula ipsum a.</p>
+                <!--generated paragraphs-->
+                <div class="lead paragraph col-md-6  blocks border">
                 </div>
-                
+                <button type="button" class="resetBtn btn btn-default"> Reset</button>
+                <textarea rows = 12 cols = 45 id="userInput" onkeypress="CallBoth(event)" onkeydown="BackSpace(event)"></textarea>
+                <ul class="actions">
+                    <li><a href="#" class="button">Etiam posuere</a></li>
+                </ul>
+                <h3>Your typing speed of ___ was taken in ___ seconds.</h3>
                 <div id="copyright">
                     <span>&copy; Hieu Tran. All rights reserved.</span>
                     <span>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</span>

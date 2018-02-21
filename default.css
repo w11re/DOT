@@ -391,7 +391,7 @@ ul.contact li a.icon-rss:before {
 #header {
 	position: relative;
 	float: left;
-	width: 20%;
+	width: 25%;
 	height: 100%;
 	padding: 3em 0em;
 }
@@ -441,8 +441,8 @@ ul.contact li a.icon-rss:before {
     vertical-align: top;
     cursor: pointer;
     color: white;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
 
 }
 
@@ -521,7 +521,7 @@ ul.contact li a.icon-rss:before {
 
 #main {
 	float: right;
-	width: 80%;
+	width: 75%;
 	height: 1000px;
 	min-width: 500px;
 	background: #FFF;
@@ -529,8 +529,15 @@ ul.contact li a.icon-rss:before {
 	text-align: center;
 }
 
-#passage {
-	font-weight: bold;
+#main .about {
+    padding: 70px;
+
+}
+
+#main h3 {
+    position:fixed;
+    width:80%;
+    display:block;
 }
 
 .resetBtn {
@@ -588,9 +595,10 @@ ul.contact li a.icon-rss:before {
 /*********************************************************************************/
 
 #copyright {
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 16em;
+    position:fixed;
+    bottom:0;
+    width:80%;
+    display:block;
 }
 
 #copyright span {
