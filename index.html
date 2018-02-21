@@ -14,14 +14,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>DOT- Typer</title>
-        <meta name="keywords" content="" />
-        <meta name="description" content="" />
         <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
         <link href="default.css" rel="stylesheet" type="text/css" media="all" />
         <!--jQuery-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <!--Local script-->
-        <script src="js/main.js"></script>
+        <script src="js/Typing.js"></script>
+        <script src="js/UserProfile.js"></script>
         <!--[if IE 6]>
         <link href="default_ie6.css" rel="stylesheet" type="text/css" />
         <![endif]-->
@@ -32,13 +31,38 @@
                 <div id="logo">
                     <h1><a href="#"><b>DOT</b></a></h1>
                     <span>Digital Online Typing</span>
+                    <br />
+<!-- Login button form -->
+                    <h4 onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</h4>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <br />
+      <input type="text"  name="uname" maxlength="16" size="16" required>
+      <br />
+      <label for="psw"><b>Password</b></label>
+      <br />
+      <input type="password"  name="psw" maxlength="16" size="16" required>
+      <br />
+      <button type="submit">Login</button>
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+<!-- End of Login button form -->
+<!-- Logout button -->
+                    <h4 onclick="soFreshAndSoClean()">Logout</h4>
+<!-- Login button form -->
                 </div>
                 <div id="menu">
                     <ul>
                         <li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
                         <li><a href="#" accesskey="2" title="">Typing Tests ></a></li>
                         <li><a href="#" accesskey="3" title="">Profile ></a></li>
-                        <li><a href="#" accesskey="4" title="">Log Out ></a></li>
                     </ul>
                 </div>
             </div>

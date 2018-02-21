@@ -341,6 +341,7 @@ var timer = 0;
 var seconds = 0;
 var t;
 var stopped = 0;
+
 function Timer(event){
     $(".resetBtn").click(function(){
       clearInterval(t);

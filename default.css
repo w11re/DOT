@@ -46,8 +46,9 @@ a:hover {
 
 .container {
 	overflow: hidden;
-	margin: 0em auto;
 }
+
+
 
 
 /*********************************************************************************/
@@ -434,7 +435,16 @@ ul.contact li a.icon-rss:before {
 	margin-bottom: 1em;
 	border-radius: 50%;
 }
+#logo h4 {
+    /* other styles goes here... */
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
 
+}
 
 /*********************************************************************************/
 
@@ -602,4 +612,123 @@ ul.contact li a.icon-rss:before {
 	display: block;
 	color: #000;
 	background: red;
+}
+
+/*********************************************************************************/
+
+
+/* Login Menu Button */
+
+
+/*********************************************************************************/
+
+input[type=text], input[type=password] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+/* Set a style for all buttons */
+#logo button, .cancelbtn {
+    background-color: #0099ff;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: auto;
+}
+
+
+/* Center the image and position the close button */
+#logo .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+#logo img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+#logo .container {
+    padding: 16px;
+}
+
+#logo span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+#logo .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+#logo .modal-content {
+    background-color: #fefefe;
+    margin: 5% 10% 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 59.9%; /* Could be more or less, depending on screen size */
+
+}
+
+/* The Close Button (x) */
+#logo .close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+#logo .close:hover,
+#logo .close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+#logo .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
 }
