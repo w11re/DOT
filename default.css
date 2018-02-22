@@ -285,82 +285,6 @@ ul.contact li a.icon-rss:before {
 /*********************************************************************************/
 
 
-/* 4-column */
-
-
-/*********************************************************************************/
-
-.box1,
-.box2,
-.box3,
-.box4 {
-	width: 10%;
-}
-
-.box1,
-.box2,
-.box3,
-{
-	float: left;
-	margin-right: 20px;
-}
-
-.box4 {
-	float: right;
-}
-
-
-/*********************************************************************************/
-
-
-/* 3-column */
-
-
-/*********************************************************************************/
-
-.boxA,
-.boxB,
-.boxC {
-	width: 10%;
-}
-
-.boxA,
-.boxB,
-{
-	float: left;
-	margin-right: 20px;
-}
-
-.boxC {
-	float: right;
-}
-
-
-/*********************************************************************************/
-
-
-/* 2-column */
-
-
-/*********************************************************************************/
-
-.tbox1,
-.tbox2 {
-	width: 25%;
-}
-
-.tbox1 {
-	float: left;
-}
-
-.tbox2 {
-	float: right;
-}
-
-
-/*********************************************************************************/
-
-
 /* Heading Titles */
 
 
@@ -391,7 +315,8 @@ ul.contact li a.icon-rss:before {
 #header {
 	position: relative;
 	float: left;
-	width: 25%;
+	width: 27%;
+    min-width: 240px;
 	height: 100%;
 	padding: 3em 0em;
 }
@@ -412,6 +337,9 @@ ul.contact li a.icon-rss:before {
 
 #logo h1 {
 	display: block;
+    cursor: pointer;
+    color: white;
+    font-size: 40px;
 }
 
 #logo a {
@@ -443,6 +371,7 @@ ul.contact li a.icon-rss:before {
     color: white;
     padding-left: 15px;
     padding-right: 15px;
+    font-size:15;
 
 }
 
@@ -475,10 +404,12 @@ ul.contact li a.icon-rss:before {
 
 #menu li:hover a,
 #menu li.active a,
-#menu li.active span {}
+#menu li.active span {
+	color: rgba(255, 255, 255, 1);
+}
 
 #menu .current_page_item a {
-	background: #2980b9;
+	background: #005c99;
 	color: rgba(255, 255, 255, 1);
 }
 
@@ -520,12 +451,13 @@ ul.contact li a.icon-rss:before {
 /*********************************************************************************/
 
 #main {
+
 	float: right;
-	width: 75%;
+	width: 73%;
 	height: 1000px;
 	min-width: 500px;
 	background: #FFF;
-	border-top: 6px solid #2980b9;
+	border-top: 10px solid #2980b9;
 	text-align: center;
 }
 
@@ -597,7 +529,7 @@ ul.contact li a.icon-rss:before {
 #copyright {
     position:fixed;
     bottom:0;
-    width:80%;
+    width:75%;
     display:block;
 }
 
@@ -640,6 +572,7 @@ input[type=text], input[type=password] {
     border-bottom: 1px solid #ccc;
     text-align: center;
 }
+
 
 /* Set a style for all buttons */
 #logo button, .cancelbtn {
@@ -692,7 +625,7 @@ input[type=text], input[type=password] {
 /* Modal Content/Box */
 #logo .modal-content {
     background-color: #fefefe;
-    margin: 5% 10% 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    margin: 5% 8% 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
     width: 59.9%; /* Could be more or less, depending on screen size */
 
