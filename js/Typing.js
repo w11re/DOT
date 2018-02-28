@@ -44,13 +44,13 @@ function genParagraph(){
 
   document.getElementById("userInput").select();
 
-  $(".paragraph").empty();
+  $(".passage").empty();
 
-  $(".paragraph").append("<p>");
+  $(".passage").append("<p>");
   $.each(tempWords, function( index, value ) {
-    $(".paragraph").append(value + " ");
+    $(".passage").append(value + " ");
   });
-  $(".paragraph").append("</p>");
+  $(".passage").append("</p>");
 
 }
 
