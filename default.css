@@ -415,6 +415,11 @@ ul.contact li a.icon-rss:before {
 	color: rgba(255, 255, 255, 1);
 }
 
+#menu li:hover {
+	background: #4d94ff;
+
+}
+
 #menu .icon {}
 
 
