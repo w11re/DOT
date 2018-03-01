@@ -253,38 +253,6 @@ ul.contact li a.icon-rss:before {
 /*********************************************************************************/
 
 
-/* Button Style */
-
-
-/*********************************************************************************/
-
-.button {
-	display: inline-block;
-	padding: 1em 3em 1em 2em;
-	letter-spacing: 0.20em;
-	text-decoration: none;
-	text-transform: uppercase;
-	font-weight: 400;
-	font-size: 0.90em;
-	color: #FFF;
-}
-
-.button:before {
-	display: inline-block;
-	background: #FFC31F;
-	margin-right: 1em;
-	width: 40px;
-	height: 40px;
-	line-height: 40px;
-	border-radius: 20px;
-	text-align: center;
-	color: #272925;
-}
-
-
-/*********************************************************************************/
-
-
 /* Heading Titles */
 
 
@@ -314,7 +282,7 @@ ul.contact li a.icon-rss:before {
 
 #header {
     
-	border-top: 5px solid #2980b9;
+	border-top: 6px solid #2980b9;
 	position: relative;
 	float: left;
 	width: 300px;
@@ -446,6 +414,7 @@ ul.contact li a.icon-rss:before {
 
 #page {
 	background: #2a2a2a;
+    height: 100%;
 }
 
 
@@ -466,7 +435,7 @@ ul.contact li a.icon-rss:before {
 	height: 1300px;
 	min-width: 750px;
 	background: #FFF;
-	border-top: 7px solid #2980b9;
+	border-top: 6px solid #2980b9;
 	text-align: center;
 }
 
@@ -476,35 +445,43 @@ ul.contact li a.icon-rss:before {
 }
 
 #main h3 {
-	border-top: 1px solid rgba(0, 0, 0, 0.20);
-    padding-top: 25px;
     width:100%;
     display:block;
 }
 
 #main .passage {
+    margin-bottom: 1em;
     cursor: default;
     font-family: Helvetica;
     font-size: 20px;
     padding-bottom: 35px;
+
     -webkit-user-select: none; /* Safari */        
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
 }
 
-#main textarea {
-    
+
+#main .resetBtn {
+	background: #3385ff;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 5em;
+
 }
 
-
-.resetBtn {
-	position: relative;
-	top: 0;
-	right: 0;
-	margin-right: 30px;
+#main .txt {
+    overflow: hidden;
+    border: 0;
+    border-bottom: 2px solid #3366FF;
+	border-left: 4px solid #3366FF;
 }
-
 
 /*********************************************************************************/
 
