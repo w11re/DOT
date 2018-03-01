@@ -315,7 +315,7 @@ ul.contact li a.icon-rss:before {
 #header {
     
 	border-top: 5px solid #2980b9;
-	position: fixed;
+	position: relative;
 	float: left;
 	width: 300px;
     min-width: 240px;
@@ -460,12 +460,13 @@ ul.contact li a.icon-rss:before {
 #main {
     position: fixed;
     left: 300px;
+    right: 0px;
 	float: right;
-	width: 73%;
+
 	height: 1300px;
 	min-width: 750px;
 	background: #FFF;
-	border-top: 5px solid #2980b9;
+	border-top: 7px solid #2980b9;
 	text-align: center;
 }
 
