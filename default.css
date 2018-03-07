@@ -388,7 +388,7 @@ ul.contact li a.icon-rss:before {
 	background: #FFF;
 	border-top: 5px solid #2980b9;
 	text-align: center;
-    z-index: -1; /* fixes the modal being under the main div*/
+
 }
 
 #main .about {
@@ -486,11 +486,11 @@ input[type=text], input[type=password] {
 
 
 /* Set a style for all buttons */
-#logo button, .cancelbtn {
+#logo button, .cancelbtn, .loginbtn {
     background-color: #0099ff;
     color: white;
     padding: 14px 20px;
-    margin: 8px 0;
+    margin: 8px;
     border: none;
     cursor: pointer;
     width: auto;
@@ -519,12 +519,13 @@ input[type=text], input[type=password] {
 }
 
 /* The Modal (background) */
-#logo .modal {
+.modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
+    text-align: center;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
@@ -533,28 +534,13 @@ input[type=text], input[type=password] {
 }
 
 /* Modal Content/Box */
-#logo .modal-content {
+.modal-content {
+    padding: 30px;
     background-color: #fefefe;
     margin: 5% 8% 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
     width: 59.9%; /* Could be more or less, depending on screen size */
 
-}
-
-/* The Close Button (x) */
-#logo .close {
-    position: absolute;
-    right: 25px;
-    top: 0;
-    color: #000;
-    font-size: 35px;
-    font-weight: bold;
-}
-
-#logo .close:hover,
-#logo .close:focus {
-    color: red;
-    cursor: pointer;
 }
 
 /* Add Zoom Animation */

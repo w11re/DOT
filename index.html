@@ -36,24 +36,7 @@
                 <!-- Login button form -->
                 <h4 onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</h4>
 
-                <div id="id01" class="modal">
-
-                    <form class="modal-content animate" action="/action_page.php">
-
-                        <div class="container">
-                            <label for="uname"><b>Username</b></label>
-                            <br />
-                            <input type="text" name="uname" maxlength="16" size="16" required>
-                            <br />
-                            <label for="psw"><b>Password</b></label>
-                            <br />
-                            <input type="password" name="psw" maxlength="16" size="16" required>
-                            <p><br /></p>
-                            <button type="submit">Login</button>
-                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                        </div>
-                    </form>
-                </div>
+                
                 <!-- End of Login button form -->
                 <!-- Logout button -->
                 <h4 onclick="soFreshAndSoClean()">Logout</h4>
@@ -66,6 +49,8 @@
                     <li><a href="Profile.html" title="View Profile">Profile ></a></li>
                 </ul>
             </div>
+        </div>
+        <div id="space">
         </div>
         <div id="main">
             <div class="title">
@@ -83,6 +68,24 @@
             </div>
         </div>
     </div>
+<div id="id01" class="modal">
+
+                    <form class="modal-content animate" action="/action_page.php">
+
+                        <div class="container">
+                            <label for="uname"><b>Username</b></label>
+                            <br />
+                            <input type="text" name="uname" maxlength="16" size="16" required>
+                            <br />
+                            <label for="psw"><b>Password</b></label>
+                            <br />
+                            <input type="password" name="psw" maxlength="16" size="16" required>
+                            <p></p>
+                            <button type="submit" class="loginbtn">Login</button>
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
 </body>
 <footer>
 
