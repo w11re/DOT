@@ -405,7 +405,7 @@ ul.contact li a.icon-rss:before {
     cursor: default;
     font-family: Helvetica;
     font-size: 20px;
-    padding-bottom: 35px;
+    padding: 35px auto;
     -webkit-user-select: none; /* Safari */        
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+/Edge */
@@ -416,30 +416,32 @@ ul.contact li a.icon-rss:before {
     
 }
 
-
-.resetBtn {
+#main .resetBtn {
 	position: relative;
 	top: 0;
 	right: 0;
 	margin-right: 30px;
 }
 
-/* Featured */
-
-#featured {
-	overflow: hidden;
-	margin-bottom: 3em;
-	padding-top: 5em;
-	border-top: 1px solid rgba(0, 0, 0, 0.08);
+/* TestBoxes */
+#testboxes {
+        position: relative;
 }
+#testboxes button {
+    position: relative;
+    background-color: #0099ff;
+    padding: 14px 20px;
+    margin: 15px auto;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    height: 80px;
+    color: white;
 
-/* Sidebar */
-
-#sidebar {}
-
-/* Footer */
-
-#footer {}
+}
+#testboxes a {
+    position: relative;
+}
 
 /* Copyright */
 
@@ -464,13 +466,6 @@ ul.contact li a.icon-rss:before {
 	text-decoration: none;
 	color: rgba(0, 0, 0, 0.9);
 }
-
-.fa {
-	display: block;
-	color: #000;
-	background: red;
-}
-
 /* Login Menu Button */
 
 input[type=text], input[type=password] {
@@ -519,7 +514,7 @@ input[type=text], input[type=password] {
 }
 
 /* The Modal (background) */
-.modal {
+.modal, .signup{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -544,7 +539,7 @@ input[type=text], input[type=password] {
 }
 
 /* Add Zoom Animation */
-#logo .animate {
+.animate {
     -webkit-animation: animatezoom 0.6s;
     animation: animatezoom 0.6s
 }
