@@ -63,31 +63,51 @@
                 <textarea rows = 12 cols = 45 id="userInput" onkeypress="CallBoth(event)" onkeydown="BackSpace(event)"></textarea>
                 <br><br><br><br>
                 <h3>Your typing speed of ___ was taken in ___ seconds.</h3>
-                <div id="copyright">
-                    <span>&copy; Hieu Tran. All rights reserved.</span>
-                    <span>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</span>
-                </div>
+            <div id="copyright">
+               <span>&copy; Hieu Tran. All rights reserved.</span>
+               <span>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</span>
             </div>
-        </div>
-<div id="id01" class="modal">
-
-                    <form class="modal-content animate" action="/action_page.php">
-
-                        <div class="container">
-                            <label for="uname"><b>Username</b></label>
-                            <br />
-                            <input type="text" name="uname" maxlength="16" size="16" required>
-                            <br />
-                            <label for="psw"><b>Password</b></label>
-                            <br />
-                            <input type="password" name="psw" maxlength="16" size="16" required>
-                            <p></p>
-                            <button type="submit" class="loginbtn">Login</button>
-                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                        </div>
-                    </form>
-                </div>
-
-    </body>
-    <footer>
+         </div>
+      </div>
+      <div id="id01" class="modal">
+         <form class="modal-content animate" action="/action_page.php">
+            <div class="container">
+               <label for="uname"><b>Username</b></label>
+               <br />
+               <input type="text" name="uname" maxlength="16" size="16" required>
+               <br />
+               <label for="psw"><b>Password</b></label>
+               <br />
+               <input type="password" name="psw" maxlength="16" size="16" required>
+               <p></p>
+               <button type="submit" class="loginbtn">Login</button>
+               <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
+         </form>
+      </div>
+      <div id="id02" class="signup">
+         <form class="modal-content animate" action="/action_page.php">
+            <div class="container">
+               <label for="uname"><b>Username</b></label>
+               <br />
+               <input type="text" name="uname" maxlength="16" size="16" required>
+               <br />
+               <label for="psw"><b>Password</b></label>
+               <br />
+               <input type="password" name="psw" maxlength="16" size="16" required>
+               <br />
+               <label for="psw2"><b>Confirm Password</b></label>
+               <br />
+               <input type="password" name="psw2" maxlength="16" size="16" required>
+               <br />
+               <label for="email"><b>Email</b></label>
+               <br />
+               <input type="password" name="email" maxlength="16" size="16" required>
+               <br />
+               <button type="submit" class="loginbtn">Sign Up</button>
+               <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
+         </form>
+      </div>
+   </body>
 </html>
