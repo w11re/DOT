@@ -31,7 +31,7 @@
             <div id="header">
                 <div id="logo">
                     <h1><a href = "index.html"><b>DOT</b></a></h1>
-                    <span>Digital Online Typing</span>
+                    <span><u>Digital Online Typing</u></span>
                     <br />
                 <!-- Login button form -->
                 <h4 onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</h4>
@@ -65,9 +65,9 @@
                 <div class="passage">
                 </div>
                 <br>
-                <button type="button" class="resetBtn btn btn-default"> Reset</button>
                 <textarea rows = 2 cols = 45 id="userInput" onkeypress="CallBoth(event)" onkeydown="BackSpace(event)"></textarea>
-                
+                <button type="button" class="resetBtn btn btn-default"> Reset</button>
+
                 <h3>Your typing speed of ___ was taken in ___ seconds.</h3>
                 </div>
             <div id="copyright">
@@ -122,7 +122,7 @@
             var myVar;
             
             function myFunction() {
-                myVar = setTimeout(showPage, 1500);
+                myVar = setTimeout(showPage, 1000);
             }
             
             function showPage() {

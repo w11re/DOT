@@ -334,7 +334,7 @@ function genWords(){
   }
 
   words.wordList = wordList;
-  return words(35);
+  return words(10);
 }
 
 var timer = 0;
@@ -365,7 +365,7 @@ function startTime () {
 
 function genLib () {
     var charArray = [];
-    for(var i = 0; i < 35; i++){ //@ change 5 to #words
+    for(var i = 0; i < 10; i++){ //@ change 5 to #words
         charArray[i] = tempWords[i].split('');
     }
     return charArray;
