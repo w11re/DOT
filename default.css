@@ -68,6 +68,10 @@ p {
 	color: #6F6F6F;
 }
 
+#profileimages {
+	min-width: 950px;
+}
+
 /* Header */
 
 #header {
