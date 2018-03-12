@@ -36,12 +36,13 @@ p {
 .titleIndex {
 	position: fixed;
 	top: 0px;
-	width: 85%;
+	width: 80%;
 	margin-bottom: 1em;
 	background-color: #3498db;
-	-moz-box-shadow: 	inset -5px 0 12px 0px rgba(0, 0, 0, 0.6), 0 6px 6px rgba(0,0,0,0.23);
-    -webkit-box-shadow: inset -5px 0 12px 0px rgba(0, 0, 0, 0.6), 0 6px 6px rgba(0,0,0,0.23);
-    box-shadow: 		inset -5px 0 12px 0px rgba(0, 0, 0, 0.6), 0 6px 6px rgba(0,0,0,0.23);
+	-moz-box-shadow: 	inset 5px 0 12px 0px rgba(0, 0, 0, 0.6), 0 6px 6px rgba(0,0,0,0.23);
+    -webkit-box-shadow: inset 5px 0 12px 0px rgba(0, 0, 0, 0.6), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow: 		inset 15px 0px 12px -10px rgba(0, 0, 0, 0.6), 0 6px 6px rgba(0,0,0,0.23);
+
 }
 
 .titleIndex h2 {
@@ -185,7 +186,7 @@ p {
 #main {
     position: fixed;
     left: 300px;
-	width: 85%;
+	width: 80%;
 	height: 1300px;
 	min-width: 700px;
 	background: #FFF;
