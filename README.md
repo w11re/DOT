@@ -1,7 +1,6 @@
-# Senior Project Planning 2
 # DOT Type Tester
 
-![alt text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQpXvbuELzJJ6T337mbrV1lvUs_usuucu1GAFtUhLnOFb9DEaZyQ)
+![alt text](https://massdrop-s3.imgix.net/product-images/vortex-vibe-mechanical-keyboard/AI7B4636_copy_banner_20171227120034.jpg?auto=format&fm=jpg&fit=crop&w=955&h=289&dpr=1)
 
 Typing test website offering easy ways to test your typing speed. Just type the words that you see on the screen. After the test ends, you will receive your result as a WPM-value, which means words per minute.
 
@@ -10,7 +9,7 @@ It's hard to calculate the average typing speed as this depends on the language 
 
 ## Getting Started
 
-Clone the github repository and run the executable file. No registration actually required.
+Clone the github repository and run the executable file. No registration actually required unless you want to record your typing speeds. At that point, you would need to setup the database yourself. 
 ```
 git clone https://github.com/w11re/dot
 ```
@@ -28,7 +27,8 @@ Typically, installing will not be necessary. The user can just clone the github 
 * [Eclipse](https://www.eclipse.org/) - Backend
 * [MySQL](https://www.mysql.com/) - Database Dependency
 * [JDBC](http://www.oracle.com/technetwork/java/javase/jdbc/index.html) - Database Connection
-
+* [Tomcat](http://tomcat.apache.org/) - Java Servlet, Server Pages, WebSocket Technology
+* [Maven](https://maven.apache.org/download.cgi) - Web Application building
 
 ## Contributing
 
@@ -36,7 +36,7 @@ Please read [CONTRIBUTING.md](https://github.com/arjun-csekar/TeamRedundancy/blo
 
 ## Versioning
 
-We use [Github] for versioning.
+We use [Github](https://github.com) for versioning.
 
 ## Authors
 
