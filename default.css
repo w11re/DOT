@@ -20,6 +20,7 @@ ul {
 }
 
 p {
+	font-size: 18px;
 	line-height: 180%;
 }
 
@@ -35,15 +36,16 @@ p {
 .titleIndex {
 	position: fixed;
 	top: 0px;
-	width: 87%;
+	width: 85%;
 	margin-bottom: 1em;
-	background-color: #2980b9;
+	background-color: #3498db;
 	-moz-box-shadow: 	inset -5px 0 12px 0px rgba(0, 0, 0, 0.6), 0 6px 6px rgba(0,0,0,0.23);
     -webkit-box-shadow: inset -5px 0 12px 0px rgba(0, 0, 0, 0.6), 0 6px 6px rgba(0,0,0,0.23);
     box-shadow: 		inset -5px 0 12px 0px rgba(0, 0, 0, 0.6), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .titleIndex h2 {
+	font-family: 'Verdana', sans-serif;
 	font-size: 2.8em;
 	color: white;
 	text-shadow: 0 1px 0 #ccc,
@@ -192,14 +194,15 @@ p {
 }
 
 #main .about {
+	text-indent: 2em;
 	margin-top: 2em;
-    padding: 70px;
+    padding: 170px;
 }
 
 #main h3 {
 	position: fixed;
 	bottom: 10%;
-	width: 86%;
+	width: 85%;
 	border-top: 1px solid rgba(0, 0, 0, 0.20);
     padding-top: 2em;
     display:block;
@@ -269,7 +272,7 @@ p {
 #copyright {
     position:fixed;
     bottom:0;
-    width:87%;
+    width:85%;
     display:block;
 }
 
