@@ -396,16 +396,20 @@ ul.contact li a.icon-rss:before {
 }
 
 #main h3 {
+	margin-top: 8em;
 	border-top: 1px solid rgba(0, 0, 0, 0.20);
-    padding-top: 25px;
+    padding-top: 2em;
     display:block;
 }
-
+#main h4 {
+	margin-bottom: 2em;
+	
+}
 #main .passage {
     cursor: default;
     font-family: Helvetica;
-    font-size: 20px;
-    padding: 35px auto;
+    font-size: 30px;
+    padding: 35px 4em;
     -webkit-user-select: none; /* Safari */        
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+/Edge */
@@ -413,8 +417,19 @@ ul.contact li a.icon-rss:before {
 }
 
 #main textarea {
-    
+	overflow: hidden;
+	margin-top: 4em;
+	border: none;
+	border-bottom: 2px solid #0099ff;
+	font-family:"Arial", Times, serif;  
+	font-size: 25px;   
 }
+#main textarea:focus {
+    outline: none !important;
+	border: none;
+	border-bottom: 2px solid #0099ff;
+}
+
 
 #main .resetBtn {
 	position: relative;
@@ -538,7 +553,57 @@ input[type=text], input[type=password] {
 
 }
 
-/* Add Zoom Animation */
+#loader {
+	position: absolute;
+	left: 45%;
+	top: 30%;
+	z-index: 1;
+	width: 150px;
+	height: 150px;
+	margin: -75px 0 0 -75px;
+	border: 26px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 26px solid #3498db;
+	width: 220px;
+	height: 220px;
+	-webkit-animation: spin 2s linear infinite;
+	animation: spin 2s linear infinite;
+  }
+  
+  @-webkit-keyframes spin {
+	0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+  }
+  
+  /* Add animation to "page content" */
+  .animate-bottom {
+	position: relative;
+	-webkit-animation-name: animatebottom;
+	-webkit-animation-duration: 1s;
+	animation-name: animatebottom;
+	animation-duration: 1s
+  }
+  
+  @-webkit-keyframes animatebottom {
+	from { bottom:-100px; opacity:0 } 
+	to { bottom:0px; opacity:1 }
+  }
+  
+  @keyframes animatebottom { 
+	from{ bottom:-100px; opacity:0 } 
+	to{ bottom:0; opacity:1 }
+  }
+  
+  #myDiv {
+	display: none;
+	text-align: center;
+  }
+  
 .animate {
     -webkit-animation: animatezoom 0.6s;
     animation: animatezoom 0.6s

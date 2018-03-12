@@ -21,11 +21,12 @@
         <!--Local script-->
         <script src="js/Typing.js"></script>
         <script src="js/UserProfile.js"></script>
+        <script src="js/loader.js"></script>
         <!--[if IE 6]>
         <link href="default_ie6.css" rel="stylesheet" type="text/css" />
         <![endif]-->
     </head>
-    <body>
+    <body onload="myFunction()" style="margin:0;">
         <div id="page" class="container">
             <div id="header">
                 <div id="logo">
@@ -50,19 +51,25 @@
                     </ul>
                 </div>
             </div>
+
+
             <div id="main">
+                <div id="loader"></div>
+
+                <div style="display: none" id="typing" class="animate-bottom">
                 <div class="title">
                     <h2>Simple Type Test</h2>
-                    <h4>Type the words below</h4>
+                    <h4><u>Type the words below</u></h4>
                 </div>
                 <!--generated paragraphs-->
                 <div class="passage">
                 </div>
                 <br>
                 <button type="button" class="resetBtn btn btn-default"> Reset</button>
-                <textarea rows = 12 cols = 45 id="userInput" onkeypress="CallBoth(event)" onkeydown="BackSpace(event)"></textarea>
-                <br><br><br><br>
+                <textarea rows = 2 cols = 45 id="userInput" onkeypress="CallBoth(event)" onkeydown="BackSpace(event)"></textarea>
+                
                 <h3>Your typing speed of ___ was taken in ___ seconds.</h3>
+                </div>
             <div id="copyright">
                <span>&copy; Hieu Tran. All rights reserved.</span>
                <span>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</span>
@@ -109,5 +116,19 @@
             </div>
          </form>
       </div>
+
+
+            <script>
+            var myVar;
+            
+            function myFunction() {
+                myVar = setTimeout(showPage, 1500);
+            }
+            
+            function showPage() {
+              document.getElementById("loader").style.display = "none";
+              document.getElementById("typing").style.display = "block";
+            }
+            </script>
    </body>
 </html>
