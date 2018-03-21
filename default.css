@@ -42,7 +42,6 @@ p {
 	-moz-box-shadow: 	inset 5px 0 12px 0px rgba(0, 0, 0, 0.6), 0 6px 6px rgba(0,0,0,0.23);
     -webkit-box-shadow: inset 5px 0 12px 0px rgba(0, 0, 0, 0.6), 0 6px 6px rgba(0,0,0,0.23);
     box-shadow: 		inset 15px 0px 12px -10px rgba(0, 0, 0, 0.6), 0 6px 6px rgba(0,0,0,0.23);
-
 }
 
 .titleIndex h2 {
@@ -64,13 +63,13 @@ p {
 
 	
 }
+#titleContent {
+    opacity: 0;
+}
+
 .title .byline {
 	font-size: 1.3em;
 	color: #6F6F6F;
-}
-
-#profileimages {
-	min-width: 950px;
 }
 
 /* Header */
@@ -415,7 +414,6 @@ input[type=text], input[type=password] {
   }
 
 .animate-top {
-	position: relative;
 	-webkit-animation-name: animatetop;
 	-webkit-animation-duration: 1s;
 	animation-name: animatetop;
@@ -447,6 +445,12 @@ input[type=text], input[type=password] {
     -webkit-animation: animatezoom 0.6s;
     animation: animatezoom 0.6s
     animation-delay: 2s;
+
+}
+.animateD3 {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s;
+    animation-delay: 1s;
 
 }
 @-webkit-keyframes animatezoom {
