@@ -334,7 +334,7 @@ function genWords(){
   }
 
   words.wordList = wordList;
-  return words(35);
+  return words(20);
 }
 
 var timer = 0;
@@ -365,7 +365,7 @@ function startTime () {
 
 function genLib () {
     var charArray = [];
-    for(var i = 0; i < 35; i++){ //@ change 5 to #words
+    for(var i = 0; i < 20; i++){ //@ change 5 to #words
         charArray[i] = tempWords[i].split('');
     }
     return charArray;
@@ -409,7 +409,7 @@ function Errors(event){
       currIndex++;
       typedEntries++;
 
-      if(currWord == 9 && currIndex == wordLib[currWord].length){
+      if(currWord == 19 && currIndex == wordLib[currWord].length){
           StopTime();
           return;
       }
@@ -468,6 +468,13 @@ function StopTime(){
     $('h3').css('color', 'green');
     seconds = 0;
     timer = 0;
+    currWord = 0;
+    currIndex = 0;
+    numErrors = 0;
+    space = 0;
+    errorLib = [];
+    errorArray = [];
+    stopped = 0;
 }
 
 function calcNetWPM(){

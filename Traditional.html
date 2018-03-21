@@ -19,7 +19,7 @@
         <!--jQuery-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <!--Local script-->
-        <script src="js/Typing.js"></script>
+        <script src="js/Traditional.js"></script>
         <script src="js/UserProfile.js"></script>
         <script src="js/loader.js"></script>
         <!--[if IE 6]>
@@ -122,12 +122,13 @@
             var myVar;
             
             function myFunction() {
-                myVar = setTimeout(showPage, 1000);
+                myVar = setTimeout(showPage, 750);
             }
             
             function showPage() {
               document.getElementById("loader").style.display = "none";
               document.getElementById("typing").style.display = "block";
+              document.getElementById("userInput").select();
             }
             </script>
    </body>

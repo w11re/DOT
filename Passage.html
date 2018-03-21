@@ -21,8 +21,7 @@
         <!--Local script-->
         <script src="js/Passage.js"></script>
         <script src="js/UserProfile.js"></script>
-        <script src="js/loader.js"></script>
-		<script src="js/UserProOnClicks.js"></script>
+		<script src="js/AjaxUtilities.js"></script>
         <!--[if IE 6]>
         <link href="default_ie6.css" rel="stylesheet" type="text/css" />
         <![endif]-->
@@ -123,12 +122,13 @@
             var myVar;
             
             function myFunction() {
-                myVar = setTimeout(showPage, 1500);
+                myVar = setTimeout(showPage, 1000);
             }
             
             function showPage() {
               document.getElementById("loader").style.display = "none";
               document.getElementById("typing").style.display = "block";
+              document.getElementById("userInput").select();
             }
             </script>
    </body>
