@@ -1,5 +1,3 @@
-//http://www.speedtypingonline.com/typing-equations
-
 var tempWords = genWords();
 var wordLib = genLib();
 
@@ -334,7 +332,7 @@ function genWords(){
   }
 
   words.wordList = wordList;
-  return words(20);
+  return words(10);
 }
 
 var timer = 0;
@@ -365,7 +363,7 @@ function startTime () {
 
 function genLib () {
     var charArray = [];
-    for(var i = 0; i < 20; i++){ //@ change 5 to #words
+    for(var i = 0; i < 10; i++){ //@ change 5 to #words
         charArray[i] = tempWords[i].split('');
     }
     return charArray;
@@ -409,7 +407,7 @@ function Errors(event){
       currIndex++;
       typedEntries++;
 
-      if(currWord == 19 && currIndex == wordLib[currWord].length){
+      if(currWord == 9 && currIndex == wordLib[currWord].length){
           StopTime();
           return;
       }
@@ -464,17 +462,10 @@ function StopTime(){
     stopped = 1;
     clearInterval(t);
     var netWPM = calcNetWPM();
-    $('h3').replaceWith("<h3>Your typing speed of " + netWPM + " was taken in " + seconds/10 + " seconds");
+    $('h3').replaceWith("<h3>Your typing speed of " + netWPM + " WPM was taken in " + seconds/10 + " seconds");
     $('h3').css('color', 'green');
     seconds = 0;
     timer = 0;
-    currWord = 0;
-    currIndex = 0;
-    numErrors = 0;
-    space = 0;
-    errorLib = [];
-    errorArray = [];
-    stopped = 0;
 }
 
 function calcNetWPM(){
