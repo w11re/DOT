@@ -233,6 +233,8 @@ p {
 	border-bottom: 2px solid #0099ff;
 	font-family:"Arial", Times, serif;  
 	font-size: 25px;   
+	resize: none;
+
 }
 #main textarea:focus {
     outline: none !important;
