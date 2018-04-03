@@ -23,7 +23,23 @@
       <!--[if IE 6]>
       <link href="default_ie6.css" rel="stylesheet" type="text/css" />
       <![endif]-->
+      <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+      <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyCeNwS5NzdOqNHZOwb0tOm73RHrmOHyG20",
+          authDomain: "w11re-dot.firebaseapp.com",
+          databaseURL: "https://w11re-dot.firebaseio.com",
+          projectId: "w11re-dot",
+          storageBucket: "w11re-dot.appspot.com",
+          messagingSenderId: "948325764160"
+        };
+        firebase.initializeApp(config);
+      </script>
+      <script src="js/firebase.js"></script>
    </head>
+
+
    <body onload="myFunction()">
       <div id="page" class="container">
          <div id="header">
@@ -84,11 +100,11 @@
             <div class="container">
                <label for="uname"><b>Username</b></label>
                <br />
-               <input type="text" name="uname" maxlength="16" size="16" required>
+               <input type="text" id="uname" name="uname" maxlength="16" size="16" required>
                <br />
                <label for="psw"><b>Password</b></label>
                <br />
-               <input type="password" name="psw" maxlength="16" size="16" required>
+               <input type="password" id="psw" name="psw" maxlength="16" size="16" required>
                <br />
                <label for="psw2"><b>Confirm Password</b></label>
                <br />
@@ -96,9 +112,9 @@
                <br />
                <label for="email"><b>Email</b></label>
                <br />
-               <input type="text" name="email" maxlength="16" size="16" required>
+               <input type="text" name="email" name="email" maxlength="16" size="16" required>
                <br />
-               <button type="submit" class="loginbtn">Sign Up</button>
+               <button type="submit" onclick="signUpClick()" class="loginbtn">Sign Up</button>
                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
             </div>
          </form>
