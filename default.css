@@ -331,9 +331,8 @@ input[type=text], input[type=password] {
     position: relative;
 }
 
-#logo img.avatar {
-    width: 40%;
-    border-radius: 50%;
+#logo h3 {
+    color: white;
 }
 
 #logo .container {

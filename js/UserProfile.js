@@ -1,6 +1,25 @@
 // Get the modal
+var myVar;
 var modal = document.getElementById('id01');
 var signup = document.getElementById('id02');
+
+function myFunction() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.getItem("user") !== "Guest") {
+            document.getElementById("userNameHere").innerHTML = localStorage.getItem("user");
+        } else {
+            document.getElementById("userNameHere").innerHTML = "Guest";
+        }
+        document.getElementById("userNameHere").innerHTML = localStorage.getItem("user");
+    } else {
+        document.getElementById("userNameHere").innerHTML = "Sorry, your browser does not support Web Storage...";
+    }
+    myVar = setTimeout(showText, 1000);
+}
+            
+function showText() {
+    document.getElementById("titleContent").style.opacity = "1";
+}
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
@@ -10,9 +29,30 @@ window.onclick = function(event) {
     }
 }
 
+function signIn(username) {
+    if(typeof(Storage) !== "undefined") {
+        localStorage.setItem("user", "Ethan");
+        document.getElementById("userNameHere").innerHTML = localStorage.getItem("user");
+    } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+    }
+    soFreshAndSoClean();
+}
+
+function signOut() {
+    if(typeof(Storage) !== "undefined") {
+        localStorage.setItem("user", "Guest");
+        document.getElementById("userNameHere").innerHTML = localStorage.getItem("user");
+    } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+    }
+}
+
 function soFreshAndSoClean() {
     location.reload();
 }
+
+/*
 $(document).ready(function(){
 $( "#loginClicker" ).click(function() {
     alert("LOGIN TESTING");
@@ -53,3 +93,4 @@ $('signup').click(function() {
     }
   });
 });
+*/
