@@ -34,7 +34,8 @@ function signUpClick() {
 function saveTest() {
     //var wpm = document.getElementById("").value;
 
-    firebaseRef.child('typetests').child("ethan").push({test:"92"});
+    firebaseRef.child('typetests').child("ethan").push({test1:"92"});
+
     firebaseRef.value = '';
 }
 

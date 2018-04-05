@@ -31,7 +31,7 @@ window.onclick = function(event) {
 
 function signIn(username) {
     if(typeof(Storage) !== "undefined") {
-        localStorage.setItem("user", "Ethan");
+        localStorage.setItem("user", username);
         document.getElementById("userNameHere").innerHTML = localStorage.getItem("user");
     } else {
         document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
