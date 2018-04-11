@@ -96,6 +96,7 @@ function signOut() {
     } else {
         document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
     }
+    location.reload();
 }
 
 function soFreshAndSoClean() {
