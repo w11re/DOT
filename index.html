@@ -19,7 +19,6 @@
       <!--jQuery-->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
       <!--Local script-->
-      <script src="js/UserProfile.js"></script>
       <!--[if IE 6]>
       <link href="default_ie6.css" rel="stylesheet" type="text/css" />
       <![endif]-->
@@ -36,16 +35,15 @@
         };
         firebase.initializeApp(config);
       </script>
-      <script src="js/firebase.js"></script>
+      <script src="js/UserProfile.js"></script>
    </head>
-
 
    <body onload="myFunction()">
       <div id="page" class="container">
          <div id="header">
             <div id="logo">
                <h1 onclick="soFreshAndSoClean()"><b>DOT</b></h1>
-               <span id="usergoeshere"><u>Digital Online Typing</u></span>
+               <span><u>Digital Online Typing</u></span>
                <br />
                <h3 id="userNameHere"><h3>
                <!-- Login button form -->
@@ -99,9 +97,9 @@
       <div id="id02" class="signup">
          <form id="signup" class="modal-content animate" method="post">
             <div class="container">
-               <label for="uname"><b>Username</b></label>
+               <label for="usname"><b>Username</b></label>
                <br />
-               <input type="text" id="uname" name="uname" maxlength="16" size="16" required>
+               <input type="text" id="usname" name="usname" maxlength="16" size="16" required>
                <br />
                <label for="psw"><b>Password</b></label>
                <br />
