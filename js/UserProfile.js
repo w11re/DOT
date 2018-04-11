@@ -2,6 +2,7 @@
 var myVar;
 var modal = document.getElementById('id01');
 var signup = document.getElementById('id02');
+var user = document.getElementById('uname');
 
 function myFunction() {
     if(typeof(Storage) !== "undefined") {
@@ -29,7 +30,7 @@ window.onclick = function(event) {
     }
 }
 
-function signIn(username) {
+function signIn() {
     if(typeof(Storage) !== "undefined") {
         localStorage.setItem("user", username);
         document.getElementById("userNameHere").innerHTML = localStorage.getItem("user");
