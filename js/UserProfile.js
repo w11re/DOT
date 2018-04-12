@@ -22,6 +22,7 @@ function myFunction() {
 function showText() {
     document.getElementById("titleContent").style.opacity = "1";
 }
+
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
@@ -113,8 +114,12 @@ function forUserInfoTest() {
             window.alert(childData.email + " " + childData.password);
         });
     });
-
 }
+
+
+
+
+
 /*
 $(document).ready(function(){
 $( "#loginClicker" ).click(function() {
