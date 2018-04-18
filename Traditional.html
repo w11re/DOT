@@ -1,38 +1,39 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<!--
-    Design by TEMPLATED
-    http://templated.co
-    Released for free under the Creative Commons Attribution License
-    
-    Name       : Skeleton 
-    Description: A two-column, fixed-width design with dark color scheme.
-    Version    : 1.0
-    Released   : 20130902
-    
-    -->
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>DOT - Typer</title>
-        <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
-        <link href="default.css" rel="stylesheet" type="text/css" media="all" />
-        <!--jQuery-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <!--Local script-->
-        <script src="js/Traditional.js"></script>
-        <script src="js/UserProfile.js"></script>
-        <script src="js/loader.js"></script>
-        <!--[if IE 6]>
-        <link href="default_ie6.css" rel="stylesheet" type="text/css" />
-        <![endif]-->
-    </head>
-    <body onload="myFunction()" style="margin:0;">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>DOT - Typer</title>
+      <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+	  <link rel="stylesheet" type="text/css" href="./default.css">
+      <!--jQuery-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      <!--Local script-->
+      <!--[if IE 6]>
+      <link href="default_ie6.css" rel="stylesheet" type="text/css" />
+      <![endif]-->
+      <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+      <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyCeNwS5NzdOqNHZOwb0tOm73RHrmOHyG20",
+          authDomain: "w11re-dot.firebaseapp.com",
+          databaseURL: "https://w11re-dot.firebaseio.com",
+          projectId: "w11re-dot",
+          storageBucket: "w11re-dot.appspot.com",
+          messagingSenderId: "948325764160"
+        };
+        firebase.initializeApp(config);
+      </script>
+      <script src="js/UserProfile.js"></script>
+      <script src="js/Traditional.js"></script>
+   </head>
+    <body onload="start()" style="margin:0;">
         <div id="page" class="container">
             <div id="header">
                 <div id="logo">
                     <h1><a href = "index.html"><b>DOT</b></a></h1>
                     <span><u>Digital Online Typing</u></span>
                     <br />
+               <h3 id="userNameHere"><h3>
                 <!-- Login button form -->
                 <h4 onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</h4>
                 <!-- End of Login button form -->
@@ -55,15 +56,20 @@
 
             <div id="main">
                 <div id="loader"></div>
-
                 <div style="display: none" id="typing" class="animate-bottom">
+<a href="Typing.html">
+<img class="backbutton" border="0" alt="back button to typing hub" src="images/triangle.png" width="50px" height="50px">
+</a>
+
                 <div class="title">
                     <h2>Simple Type Test</h2>
                     <h4><u>Type the words below</u></h4>
+                    <br>
                 </div>
                 <!--generated paragraphs-->
                 <div class="passage">
                 </div>
+                <br>
                 <br>
                 <textarea rows = 2 cols = 45 id="userInput" onkeypress="CallBoth(event)" onkeydown="BackSpace(event)"></textarea>
                 <button type="button" class="resetBtn btn btn-default"> Reset</button>
@@ -121,7 +127,7 @@
             <script>
             var myVar;
             
-            function myFunction() {
+            function myFunction2() {
                 myVar = setTimeout(showPage, 750);
             }
             
@@ -129,6 +135,12 @@
               document.getElementById("loader").style.display = "none";
               document.getElementById("typing").style.display = "block";
               document.getElementById("userInput").select();
+            }
+
+            function start() {
+                myFunction();
+                myFunction2();
+
             }
             </script>
    </body>

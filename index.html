@@ -38,7 +38,7 @@
       <script src="js/UserProfile.js"></script>
    </head>
 
-   <body onload="myFunction()">
+   <body onload="start()">
       <div id="page" class="container">
          <div id="header">
             <div id="logo">
@@ -119,4 +119,10 @@
          </form>
       </div>
    </body>
+    <script>
+        function start(){
+                myFunction();
+                myVar = setTimeout(showText, 1000);
+            }
+    </script>
 </html>

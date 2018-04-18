@@ -1,3 +1,4 @@
+//var firebaseRef = firebase.database();
 var tempWords = genWords();
 var wordLib = genLib();
 
@@ -473,3 +474,51 @@ function calcNetWPM(){
   var netWPM = grossWPM - (numErrors / seconds / 10 / 60);
   return Math.round(netWPM * 100) / 100
 }
+
+// For user authentication
+function authHandler(error, authData) {
+  if (error) {
+    console.log('Login Failed!', error);
+  } else {
+  }
+}
+
+// Log the user in with an email combination
+messagesRef.authWithPassword({
+  email    : 'lil',
+  password : 'xan'
+}, authHandler);
+
+messagesRef.onAuth(function(authData) {
+   userId = authData.uid;
+});
+
+function saveTest() {
+    //var wpm = document.getElementById("").value;
+
+    firebaseRef.child('typetests').child("ethan").push({test1:"92"});
+
+    firebaseRef.value = '';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

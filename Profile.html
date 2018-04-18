@@ -37,7 +37,7 @@
       <script src="js/UserProfile.js"></script>
    </head>
 
-   <body onload="myFunction()">
+   <body onload="start()">
       <div id="page" class="container">
          <div id="header">
             <div id="logo">
@@ -63,21 +63,35 @@
             </div>
          </div>
          <div id="main">
+                <div id="loader2"></div>
+                <div style="display: none" id="typing" class="animate-bottom">
             <div class="title">
                <h2 id="userInfoTest" onclick="forUserInfoTest()">Lil Xan</h2>
             </div>
-            <div id="profileimages">
-                    <img src="images/xan.jpg" alt="your boy xan diego" style="width:200px; height:180px">
-                    <img src="images/viper.jpg" alt="Duck Viper" style="width:200px; height:180px">
-                    <img src="images/forsen.jpg" alt="ForsenE emote" style="width:200px; height:180px">
-                    <br>
-                    <img src="images/triangle.jpg" alt="Illuminati" style="width:200px; height:180px">
-                    <img src="images/giphy.gif" alt="animated gif of green wirefram drop" style="width:200px; height:180px">
-                    <img src="images/burger.jpg" alt="Picture of an in n out burger" style="width:200px; height:180px">
-                    <br>
-                    <img src="images/mike.jpg" alt="mike mazowski" style="width:200px; height:180px">
-                    <img src="images/ratirl.jpg" alt="picture of an angry rat" style="width:200px; height:180px">
-                    <img src="images/mitch.jpg" alt="picture of mitch jones, another angry rat" style="width:200px; height:180px">
+            <div id="userPro">
+                <ul>
+    <li>
+<img src="images/typing1.jpg" alt="your boy xan diego" style="width:150px; height:100px">
+        <h2>Email:   </h2>
+      <p id="emailGoesHere">---</p>
+    </li>
+      
+    <li>
+<img src="images/typing2.jpg" alt="your boy xan diego" style="width:150px; height:100px">
+        <h2>Your AVG WPM:   </h2>
+      <p id="avgWPM">0</p>
+    </li>
+ 
+    <li>
+<img src="images/typing3.jpg" alt="your boy xan diego" style="width:150px; height:100px">
+        <h2>Tests taken:   </h2>
+      <p id="numberOfTests">0</p>
+    </li>
+
+    </li>
+  </ul>
+</div>
+
             </div>
 
             <div id="copyright">
@@ -126,5 +140,28 @@
             </div>
          </form>
       </div>
+    <script>
+            var myVar;
+            
+            function myFunction2() {
+                myVar = setTimeout(showPage, 350);
+            }
+            
+            function showPage() {
+              document.getElementById("loader2").style.display = "none";
+              document.getElementById("typing").style.display = "block";
+            }
+
+            function start(){
+                myFunction();
+                myFunction2();
+                document.getElementById("userInfoTest").innerHTML = localStorage.getItem("user");
+
+                forUserProfile();
+
+            }
+            </script>
    </body>
+    
+
 </html>

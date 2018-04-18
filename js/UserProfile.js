@@ -6,6 +6,7 @@ var modal = document.getElementById('id01');
 var signup = document.getElementById('id02');
 
 function myFunction() {
+
     if(typeof(Storage) !== "undefined") {
         if (localStorage.getItem("user") !== "Guest") {
             document.getElementById("userNameHere").innerHTML = localStorage.getItem("user");
@@ -16,7 +17,7 @@ function myFunction() {
     } else {
         document.getElementById("userNameHere").innerHTML = "Sorry, your browser does not support Web Storage...";
     }
-    myVar = setTimeout(showText, 1000);
+
 }
             
 function showText() {
@@ -37,8 +38,6 @@ function authHandler(error, authData) {
   if (error) {
     console.log('Login Failed!', error);
   } else {
-    // Set the gravatar
-    document.getElementById('gravatar').src = authData.password.profileImageURL;
   }
 }
 
@@ -104,18 +103,21 @@ function soFreshAndSoClean() {
     location.reload();
 }
 
-function forUserInfoTest() {
+function forUserProfile() {
     var user = localStorage.getItem("user");
     var example = document.getElementById("userInfoTest").value;
     var a = usersRef.orderByChild('username').equalTo(user).once('value').then(function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
             var key = childSnapshot.key;
             var childData = childSnapshot.val();
-            window.alert(childData.email + " " + childData.password);
+
+            document.getElementById("emailGoesHere").innerHTML = childData.email;
+            document.getElementById("avgWPM").innerHTML = childData.avgWPM;
+            document.getElementById("numberOfTests").innerHTML = childData.numberOfTests;
+
         });
     });
 }
-
 
 
 

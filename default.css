@@ -203,11 +203,18 @@ p {
     padding: 170px;
 }
 
+#main .backbutton {
+    position: absolute;
+    left: 25px;
+    top: -25px;
+
+}
+
 #main h3 {
 	position: fixed;
 	bottom: 10%;
 	width: 80%;
-	border-top: 1px solid rgba(0, 0, 0, 0.20);
+
     padding-top: 2em;
     display:block;
 }
@@ -255,6 +262,42 @@ p {
     font-size: 16px;
     margin-right: 35px;
     cursor: pointer;
+}
+
+#userPro ul {
+  list-style-type: none;
+  width: 70%;
+    min-width: 550px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#userPro h3 {
+  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+#userPro li img {
+  float: left;
+
+}
+#userPro li h2,
+#userPro li p {
+    display: inline;
+    vertical-align: top;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    line-height: 28px;
+
+}
+
+#userPro li {
+  padding: 10px;
+  overflow: auto;
+}
+
+#userPro li:hover {
+  background: #eee;
+
 }
 
 /* TestBoxes */
@@ -384,7 +427,21 @@ input[type=text], input[type=password] {
 	-webkit-animation: spin 2s linear infinite;
 	animation: spin 2s linear infinite;
   }
-  
+
+ #loader2 {
+	position: absolute;
+	left: 45%;
+	top: 30%;
+	z-index: 1;
+	width: 180px;
+	height: 180px;
+	margin: -75px 0 0 -75px;
+	border: 26px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 26px solid #3498db;
+	-webkit-animation: spin 1s linear infinite;
+	animation: spin .4s linear infinite;
+  }
   @-webkit-keyframes spin {
 	0% { -webkit-transform: rotate(0deg); }
 	100% { -webkit-transform: rotate(360deg); }
