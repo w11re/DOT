@@ -1,5 +1,6 @@
 var firebaseRef = firebase.database();
 var usersRef = firebaseRef.ref("users");
+var typeRef = firebaseRef.ref("typetests");
 var userId = 0;
 var myVar;
 var modal = document.getElementById('id01');
@@ -119,6 +120,22 @@ function forUserProfile() {
     });
 }
 
+function appendTests() {
+            window.alert("A");
+    var user = localStorage.getItem("user");
+    var example = document.getElementById("userInfoTest").value;
+    var a = typeRef.orderByChild('user').equalTo(user).once('value').then(function(snapshot) {
+        snapshot.forEach(function(childSnapshot) {
+            var key = childSnapshot.key;
+            var childData = childSnapshot.val();
+            
+            window.alert(childData.wpm);
+            
+
+        });
+    });
+    
+}
 
 
 

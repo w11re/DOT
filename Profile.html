@@ -15,7 +15,7 @@
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       <title>DOT - Typer</title>
       <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
-	  <link rel="stylesheet" type="text/css" href="./default.css">
+      <link rel="stylesheet" type="text/css" href="./default.css">
       <!--jQuery-->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
       <!--[if IE 6]>
@@ -23,20 +23,19 @@
       <![endif]-->
       <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
       <script>
-        // Initialize Firebase
-        var config = {
-          apiKey: "AIzaSyCeNwS5NzdOqNHZOwb0tOm73RHrmOHyG20",
-          authDomain: "w11re-dot.firebaseapp.com",
-          databaseURL: "https://w11re-dot.firebaseio.com",
-          projectId: "w11re-dot",
-          storageBucket: "w11re-dot.appspot.com",
-          messagingSenderId: "948325764160"
-        };
-        firebase.initializeApp(config);
+         // Initialize Firebase
+         var config = {
+           apiKey: "AIzaSyCeNwS5NzdOqNHZOwb0tOm73RHrmOHyG20",
+           authDomain: "w11re-dot.firebaseapp.com",
+           databaseURL: "https://w11re-dot.firebaseio.com",
+           projectId: "w11re-dot",
+           storageBucket: "w11re-dot.appspot.com",
+           messagingSenderId: "948325764160"
+         };
+         firebase.initializeApp(config);
       </script>
       <script src="js/UserProfile.js"></script>
    </head>
-
    <body onload="start()">
       <div id="page" class="container">
          <div id="header">
@@ -44,7 +43,8 @@
                <h1 onclick="soFreshAndSoClean()"><b>DOT</b></h1>
                <span><u>Digital Online Typing</u></span>
                <br />
-               <h3 id="userNameHere"><h3>
+               <h3 id="userNameHere">
+               <h3>
                <!-- Login button form -->
                <h4 onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</h4>
                <!-- End of Login button form -->
@@ -63,37 +63,42 @@
             </div>
          </div>
          <div id="main">
-                <div id="loader2"></div>
-                <div style="display: none" id="typing" class="animate-bottom">
-            <div class="title">
-               <h2 id="userInfoTest" onclick="forUserInfoTest()">Lil Xan</h2>
+            <div id="loader2"></div>
+            <div style="display: none" id="typing" class="animate-bottom">
+               <div class="title">
+                  <h2 id="userInfoTest" onclick="forUserInfoTest()">Lil Xan</h2>
+               </div>
+               <div id="userPro">
+                  <ul>
+                     <li>
+                        <img src="images/typing1.jpg" alt="your boy xan diego" style="width:120px; height:80px">
+                        <h2>Email:   </h2>
+                        <p id="emailGoesHere">---</p>
+                     </li>
+                     <li>
+                        <img src="images/typing2.jpg" alt="your boy xan diego" style="width:120px; height:80px">
+                        <h2>Your AVG WPM:   </h2>
+                        <p id="avgWPM">0</p>
+                     </li>
+                     <li>
+                        <img src="images/typing3.jpg" alt="your boy xan diego" style="width:120px; height:80px">
+                        <h2>Tests taken:   </h2>
+                        <p id="numberOfTests">0</p>
+                     </li>
+                     </li>
+                  </ul>
+                  <br>
+                  <div class="typetests">
+                     <h2>These are your tests</h2>
+                     <ul>
+                        <li> Filler </li>
+                        <li> Filler </li>
+                        <li> Filler </li>
+                        <li> Filler </li>
+                     </ul>
+                  </div>
+               </div>
             </div>
-            <div id="userPro">
-                <ul>
-    <li>
-<img src="images/typing1.jpg" alt="your boy xan diego" style="width:150px; height:100px">
-        <h2>Email:   </h2>
-      <p id="emailGoesHere">---</p>
-    </li>
-      
-    <li>
-<img src="images/typing2.jpg" alt="your boy xan diego" style="width:150px; height:100px">
-        <h2>Your AVG WPM:   </h2>
-      <p id="avgWPM">0</p>
-    </li>
- 
-    <li>
-<img src="images/typing3.jpg" alt="your boy xan diego" style="width:150px; height:100px">
-        <h2>Tests taken:   </h2>
-      <p id="numberOfTests">0</p>
-    </li>
-
-    </li>
-  </ul>
-</div>
-
-            </div>
-
             <div id="copyright">
                <span>&copy; Hieu Tran. All rights reserved.</span>
                <span>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</span>
@@ -140,28 +145,26 @@
             </div>
          </form>
       </div>
-    <script>
-            var myVar;
-            
-            function myFunction2() {
-                myVar = setTimeout(showPage, 350);
-            }
-            
-            function showPage() {
-              document.getElementById("loader2").style.display = "none";
-              document.getElementById("typing").style.display = "block";
-            }
-
-            function start(){
-                myFunction();
-                myFunction2();
-                document.getElementById("userInfoTest").innerHTML = localStorage.getItem("user");
-
-                forUserProfile();
-
-            }
-            </script>
+      <script>
+         var myVar;
+         
+         function myFunction2() {
+             myVar = setTimeout(showPage, 350);
+         }
+         
+         function showPage() {
+           document.getElementById("loader2").style.display = "none";
+           document.getElementById("typing").style.display = "block";
+         }
+         
+         function start(){
+             myFunction();
+             myFunction2();
+             document.getElementById("userInfoTest").innerHTML = localStorage.getItem("user");
+         
+             forUserProfile();
+         
+         }
+      </script>
    </body>
-    
-
 </html>
