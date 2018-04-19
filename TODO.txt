@@ -1,0 +1,6 @@
+Sign up - needs to check if username and email exists
+        - needs to also define wpm and tests taken as 0
+Sign in - needs to check username and password combination
+Login-Logout-Signup needs to change when logged in.
+Typetests - Needs to add info into firebase
+Profile - needs to display each of the tests taken with a scrollbar

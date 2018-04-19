@@ -19,7 +19,7 @@ $(document).ready(function(){
     seconds = 0;
     stopped = 0;
 
-    $('h3').replaceWith("<h3>Reseted</h3>");
+    $('h5').replaceWith("<h5>Reseted</h5>");
     $( ".alert" ).hide();
     $('#userInput').val('');
 
@@ -349,7 +349,7 @@ function Timer(event){
     });
 
     if(timer == 0 && event.which!=13 && stopped == 0){
-      $('h3').replaceWith("<h3>Time elapsed: " + seconds/10 + " seconds.</h3>");
+      $('h5').replaceWith("<h5>Time elapsed: " + seconds/10 + " seconds.</h5>");
       timer = 1;
       t = setInterval(function() {startTime()}, 100);
       timer = 1;
@@ -359,7 +359,7 @@ function Timer(event){
 
 function startTime () {
     seconds = seconds + 1;
-    $('h3').replaceWith("<h3>Time elapsed: " + seconds/10 + " seconds.</h3>");
+    $('h5').replaceWith("<h5>Time elapsed: " + seconds/10 + " seconds.</h5>");
 }
 
 function genLib () {
@@ -463,8 +463,8 @@ function StopTime(){
     stopped = 1;
     clearInterval(t);
     var netWPM = calcNetWPM();
-    $('h3').replaceWith("<h3>Your typing speed of " + netWPM + " WPM was taken in " + seconds/10 + " seconds");
-    $('h3').css('color', 'green');
+    $('h5').replaceWith("<h5>Your typing speed of " + netWPM + " WPM was taken in " + seconds/10 + " seconds");
+    $('h5').css('color', 'green');
     seconds = 0;
     timer = 0;
 }
