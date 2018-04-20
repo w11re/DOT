@@ -8,7 +8,7 @@ var signup = document.getElementById('id02');
 
 function myFunction() {
 
-    if(typeof(Storage) !== "undefined") {
+    if (typeof (Storage) !== "undefined") {
         if (localStorage.getItem("user") !== "Guest") {
             document.getElementById("userNameHere").innerHTML = localStorage.getItem("user");
         } else {
@@ -20,13 +20,13 @@ function myFunction() {
     }
 
 }
-            
+
 function showText() {
     document.getElementById("titleContent").style.opacity = "1";
 }
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     } else if (event.target == signup) {
@@ -36,20 +36,20 @@ window.onclick = function(event) {
 
 // For user authentication
 function authHandler(error, authData) {
-  if (error) {
-    console.log('Login Failed!', error);
-  } else {
-  }
+    if (error) {
+        console.log('Login Failed!', error);
+    } else {
+    }
 }
 
 // Log the user in with an email combination
 messagesRef.authWithPassword({
-  email    : 'lil',
-  password : 'xan'
+    email: 'lil',
+    password: 'xan'
 }, authHandler);
 
-messagesRef.onAuth(function(authData) {
-   userId = authData.uid;
+messagesRef.onAuth(function (authData) {
+    userId = authData.uid;
 });
 
 
@@ -58,10 +58,10 @@ function signUpClick() {
     var pass = document.getElementById("psw").value;
     var mail = document.getElementById("email").value;
 
-    firebaseRef.ref('users/' + userId).set({username:user, password:pass, email:mail});
+    firebaseRef.ref('users/').set({ username: user, password: pass, email: mail });
     firebaseRef.value = '';
 
-    if(typeof(Storage) !== "undefined") {
+    if (typeof (Storage) !== "undefined") {
         localStorage.setItem("user", user);
         document.getElementById("userNameHere").innerHTML = localStorage.getItem("user");
     } else {
@@ -74,13 +74,13 @@ function signUpClick() {
 function saveTest() {
     //var wpm = document.getElementById("").value;
 
-    firebaseRef.child('typetests').child("ethan").push({test1:"92"});
+    firebaseRef.ref('typetests/').push({ typetest: "Traditional", user: localStorage.getItem("user"), wpm: 92 });
 
     firebaseRef.value = '';
 }
 
 function signIn() {
-    if(typeof(Storage) !== "undefined") {
+    if (typeof (Storage) !== "undefined") {
         var user = document.getElementById('uname').value;
         localStorage.setItem("user", user);
         document.getElementById("userNameHere").innerHTML = localStorage.getItem("user");
@@ -91,7 +91,7 @@ function signIn() {
 }
 
 function signOut() {
-    if(typeof(Storage) !== "undefined") {
+    if (typeof (Storage) !== "undefined") {
         localStorage.setItem("user", "Guest");
         document.getElementById("userNameHere").innerHTML = localStorage.getItem("user");
     } else {
@@ -107,8 +107,8 @@ function soFreshAndSoClean() {
 function forUserProfile() {
     var user = localStorage.getItem("user");
     var example = document.getElementById("userInfoTest").value;
-    var a = usersRef.orderByChild('username').equalTo(user).once('value').then(function(snapshot) {
-        snapshot.forEach(function(childSnapshot) {
+    var a = usersRef.orderByChild('username').equalTo(user).once('value').then(function (snapshot) {
+        snapshot.forEach(function (childSnapshot) {
             var key = childSnapshot.key;
             var childData = childSnapshot.val();
 
@@ -121,20 +121,20 @@ function forUserProfile() {
 }
 
 function appendTests() {
-            window.alert("A");
+    window.alert("A");
     var user = localStorage.getItem("user");
     var example = document.getElementById("userInfoTest").value;
-    var a = typeRef.orderByChild('user').equalTo(user).once('value').then(function(snapshot) {
-        snapshot.forEach(function(childSnapshot) {
+    var a = typeRef.orderByChild('user').equalTo(user).once('value').then(function (snapshot) {
+        snapshot.forEach(function (childSnapshot) {
             var key = childSnapshot.key;
             var childData = childSnapshot.val();
-            
+
             window.alert(childData.wpm);
-            
+
 
         });
     });
-    
+
 }
 
 

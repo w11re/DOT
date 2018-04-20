@@ -11,150 +11,182 @@
     
     -->
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>DOT - Typer</title>
-        <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
-        <link href="default.css" rel="stylesheet" type="text/css" media="all" />
-        <!--jQuery-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <!--Local script-->
-        <script src="js/Typing.js"></script>
-      <!--[if IE 6]>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>DOT - Typer</title>
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+    <link href="default.css" rel="stylesheet" type="text/css" media="all" />
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!--Local script-->
+    <script src="js/Typing.js"></script>
+    <!--[if IE 6]>
       <link href="default_ie6.css" rel="stylesheet" type="text/css" />
       <![endif]-->
-      <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-      <script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script>
         // Initialize Firebase
         var config = {
-          apiKey: "AIzaSyCeNwS5NzdOqNHZOwb0tOm73RHrmOHyG20",
-          authDomain: "w11re-dot.firebaseapp.com",
-          databaseURL: "https://w11re-dot.firebaseio.com",
-          projectId: "w11re-dot",
-          storageBucket: "w11re-dot.appspot.com",
-          messagingSenderId: "948325764160"
+            apiKey: "AIzaSyCeNwS5NzdOqNHZOwb0tOm73RHrmOHyG20",
+            authDomain: "w11re-dot.firebaseapp.com",
+            databaseURL: "https://w11re-dot.firebaseio.com",
+            projectId: "w11re-dot",
+            storageBucket: "w11re-dot.appspot.com",
+            messagingSenderId: "948325764160"
         };
         firebase.initializeApp(config);
-      </script>
-      <script src="js/UserProfile.js"></script>
-   </head>
+    </script>
+    <script src="js/UserProfile.js"></script>
+</head>
 
-   <body onload="start()">
-      <div id="page" class="container">
-         <div id="header">
+<body onload="start()">
+    <div id="page" class="container">
+        <div id="header">
             <div id="logo">
-               <a href="index.html">
-               <h1><b>DOT</b></h1>
-               </a>
-               <span><u>Digital Online Typing</u></span>
-               <br />
-               <h3 id="userNameHere"><h3>
-               <!-- Login button form -->
-               <h4 onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</h4>
-               <!-- End of Login button form -->
-               <!-- Logout button -->
-               <h4 onclick="signOut()">Logout</h4>
-               <!-- Login button form -->
-               <br />
-               <h4 onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</h4>
+                <a href="index.html">
+                    <h1>
+                        <b>DOT</b>
+                    </h1>
+                </a>
+                <span>
+                    <u>Digital Online Typing</u>
+                </span>
+                <br />
+                <h3 id="userNameHere">
+                    <h3>
+                        <!-- Login button form -->
+                        <h4 onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</h4>
+                        <!-- End of Login button form -->
+                        <!-- Logout button -->
+                        <h4 onclick="signOut()">Logout</h4>
+                        <!-- Login button form -->
+                        <br />
+                        <h4 onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</h4>
             </div>
             <div id="menu">
-               <ul>
-                        <li><a href="index.html" title="DOT">Homepage ></a></li>
-                        <li class="current_page_item"><a href="#" title="Start Typing">Typing Tests</a></li>
-                        <li><a href="Profile.html" title="View Profile">Profile ></a></li>
-                    </ul>
-                </div>
+                <ul>
+                    <li>
+                        <a href="index.html" title="DOT">Homepage ></a>
+                    </li>
+                    <li class="current_page_item">
+                        <a href="#" title="Start Typing">Typing Tests</a>
+                    </li>
+                    <li>
+                        <a href="Profile.html" title="View Profile">Profile ></a>
+                    </li>
+                </ul>
             </div>
-            <div id="main">
-                <div class="title">
-                    <h2>Take a Test</h2>
-                    <h4>Select one of the typing tests below</h4>
-                </div>
+        </div>
+        <div id="main">
+            <div class="title">
+                <h2>Take a Test</h2>
+                <h4>Select one of the typing tests below</h4>
+            </div>
             <div id="testboxes">
-                <a href="Traditional.html" title="Traditional Typing Test"><button id="tb1" class="animate">Traditional</button></a>
+                <a href="Traditional.html" title="Traditional Typing Test">
+                    <button id="tb1" class="animate">Traditional</button>
+                </a>
                 <br>
                 <br>
                 <br>
-                <a href="Passage.html" title="Passage Typing Test"><button style="display: none" id="tb2" class="animateD1 setTimeout(myFunction, 3000)"> Passage</button></a>
+                <a href="Passage.html" title="Passage Typing Test">
+                    <button style="display: none" id="tb2" class="animateD1 setTimeout(myFunction, 3000)"> Passage</button>
+                </a>
                 <br>
                 <br>
                 <br>
-                <a href="#" title="Conveyor Belt Typing Test"><button style="display: none" id="tb3" class="animateD2">  Conveyor Belt </button> </a>
+                <a href="#" title="Conveyor Belt Typing Test">
+                    <button style="display: none" id="tb3" class="animateD2"> Conveyor Belt </button>
+                </a>
 
             </div>
-                
+
             <div id="copyright">
-               <span>&copy; Hieu Tran. All rights reserved.</span>
-               <span>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</span>
+                <span>&copy; Hieu Tran. All rights reserved.</span>
+                <span>Design by
+                    <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</span>
             </div>
-         </div>
-      </div>
-      <div id="id01" class="modal">
-         <form id="login" class="modal-content animate" method="post">
+        </div>
+    </div>
+    <div id="id01" class="modal">
+        <form id="login" class="modal-content animate" method="post">
             <div class="container">
-               <label for="uname"><b>Username</b></label>
-               <br />
-               <input type="text" id="uname" name="uname" maxlength="16" size="16" required>
-               <br />
-               <label for="psw"><b>Password</b></label>
-               <br />
-               <input type="password" name="psw" maxlength="16" size="16" required>
-               <p></p>
-               <button type="button" onclick={signIn()} class="loginbtn">Login</button>
-               <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <label for="uname">
+                    <b>Username</b>
+                </label>
+                <br />
+                <input type="text" id="uname" name="uname" maxlength="16" size="16" required>
+                <br />
+                <label for="psw">
+                    <b>Password</b>
+                </label>
+                <br />
+                <input type="password" name="psw" maxlength="16" size="16" required>
+                <p></p>
+                <button type="submit" onclick="signIn()" class="loginbtn">Login</button>
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
             </div>
-         </form>
-      </div>
-      <div id="id02" class="signup">
-         <form id="signup" class="modal-content animate" method="post">
+        </form>
+    </div>
+    <div id="id02" class="signup">
+        <form id="signup" class="modal-content animate" method="post">
             <div class="container">
-               <label for="usname"><b>Username</b></label>
-               <br />
-               <input type="text" id="usname" name="usname" maxlength="16" size="16" required>
-               <br />
-               <label for="psw"><b>Password</b></label>
-               <br />
-               <input type="password" id="psw" name="psw" maxlength="16" size="16" required>
-               <br />
-               <label for="psw2"><b>Confirm Password</b></label>
-               <br />
-               <input type="password" name="psw2" maxlength="16" size="16" required>
-               <br />
-               <label for="email"><b>Email</b></label>
-               <br />
-               <input type="text" id="email" name="email" maxlength="30" size="30" required>
-               <br />
-               <button type="submit" onclick="signUpClick()" class="loginbtn">Sign Up</button>
-               <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                <label for="usname">
+                    <b>Username</b>
+                </label>
+                <br />
+                <input type="text" id="usname" name="usname" maxlength="16" size="16" required>
+                <br />
+                <label for="psw">
+                    <b>Password</b>
+                </label>
+                <br />
+                <input type="password" id="psw" name="psw" maxlength="16" size="16" required>
+                <br />
+                <label for="psw2">
+                    <b>Confirm Password</b>
+                </label>
+                <br />
+                <input type="password" name="psw2" maxlength="16" size="16" required>
+                <br />
+                <label for="email">
+                    <b>Email</b>
+                </label>
+                <br />
+                <input type="text" id="email" name="email" maxlength="30" size="30" required>
+                <br />
+                <button type="submit" onclick="signUpClick()" class="loginbtn">Sign Up</button>
+                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
             </div>
-         </form>
-      </div>
-            <script>
-            var myVar;
-            
-            function bubble() {
-                myVar = setTimeout(showPage, 300);
-            }
-            
-            function showPage() {
-              document.getElementById("tb2").style.display = "inline-block";
-            }
-            function bubble2() {
-                myVar = setTimeout(showPage2, 600);
-            }
-            
-            function showPage2() {
-              document.getElementById("tb3").style.display = "inline-block";
-            }
-            
-            function start(){
-                
-                myFunction();
-                bubble();
-                bubble2();
+        </form>
+    </div>
+    <script>
+        var myVar;
 
-            }
-            </script>
-   </body>
+        function bubble() {
+            myVar = setTimeout(showPage, 300);
+        }
+
+        function showPage() {
+            document.getElementById("tb2").style.display = "inline-block";
+        }
+        function bubble2() {
+            myVar = setTimeout(showPage2, 600);
+        }
+
+        function showPage2() {
+            document.getElementById("tb3").style.display = "inline-block";
+        }
+
+        function start() {
+
+            myFunction();
+            bubble();
+            bubble2();
+
+        }
+    </script>
+</body>
+
 </html>
