@@ -58,7 +58,7 @@ function signUpClick() {
     var pass = document.getElementById("psw").value;
     var mail = document.getElementById("email").value;
 
-    firebaseRef.ref('users/').set({ username: user, password: pass, email: mail, avgWPM: 0, numberOfTests: 0 });
+    firebaseRef.ref('users/').push({ username: user, password: pass, email: mail, avgWPM: 0, numberOfTests: 0 });
     firebaseRef.value = '';
 
     if (typeof (Storage) !== "undefined") {

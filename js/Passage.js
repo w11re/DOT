@@ -246,19 +246,23 @@ function calcNetWPM() {
     var netWPM = grossWPM - (numErrors / seconds / 10 / 60);
 
     firebaseRef.ref('typetests/').push({ typetest: "Passage", user: localStorage.getItem("user"), wpm: Math.round(netWPM * 100) / 100 });
-    var a = usersRef.orderByChild('username').equalTo(localStorage.getItem("user")).once('value').then(function (snapshot) {
+
+    var a = usersRef.orderByChild("username").equalTo(localStorage.getItem("user")).once('value').then(function (snapshot) {
         snapshot.forEach(function (childSnapshot) {
             var key = childSnapshot.key;
             var childData = childSnapshot.val();
-            var tempUsername = childData.username;
-            var tempPassword = childData.password;
-            var tempEmail = childData.email;
             var tempNumberOfTests = childData.numberOfTests + 1;
-            var tempAvgWPM = (childData.avgWPM * childData.numberOfTests)
-                            + (Math.round(netWPM * 100) / 100) / (tempNumberOfTests);
-            window.alert(key);
-            firebaseRef.ref('users/').child(key).set({ username: tempUser, password: tempPass, email: tempEmail, avgWPM: tempAvgWPM, numberOfTests: tempNumberOfTests });
+            var tempAvgWPM = (((childData.avgWPM * childData.numberOfTests) + (Math.round(netWPM * 100) / 100)) / (tempNumberOfTests));
+            window.alert(tempAvgWPM);
 
+            firebaseRef.ref('users/' + key).set({ 
+                username: childData.username,
+                password: childData.password,
+                email: childData.email,
+                avgWPM: tempAvgWPM, 
+                numberOfTests: tempNumberOfTests 
+            });
+            window.alert("a");
         });
     });
     firebaseRef.value = '';
