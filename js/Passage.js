@@ -1,6 +1,13 @@
 //http://www.speedtypingonline.com/typing-equations
+var firebaseRef = firebase.database();
+var usersRef = firebaseRef.ref("users");
+var typeRef = firebaseRef.ref("typetests");
+var userId = 0;
+
 var tempPassages = genPassages();
 var passageLib = genLib();
+var userId = 0;
+
 
 //tasks to run upon page launch
 $(document).ready(function() {
@@ -55,11 +62,7 @@ function genParagraph() {
 
 function genPassages() {
     var passageList = [
-        "2 I took a deep breath and listened to the old brag of my heart. I am, I am, I am.",
-        "5 Hello babies. Welcome to Earth. It’s hot in the summer and cold in the winter. It’s round and wet and crowded. On the outside, babies, you’ve got a hundred years here. There’s only one rule that I know of, babies-\“God damn it, you’ve got to be kind.\"",
-        "Pop the trunk. I open up, I sold my soul for a good price. Outta' sight, and my hoe got talent, right? Whole squad ran through that shit yikes.",
-        "I remember, I remember when I lost my mind. There was something so pleasant about that place. Even your emotions have an echo in so much space. And when you're out there, without care, yeah I was out of touch. But it wasn't because I didn't know enough. I just knew too much. Does that make me crazy?",
-        "Lorem ipsum dolor sit amet, in vix ferri menandri imperdiet, at vim solet accusam verterem. Simul inciderint theophrastus has ex, habeo soleat nostrum cum cu.",
+        "AAAAAA"    
     ];
 
     
@@ -241,5 +244,24 @@ function StopTime() {
 function calcNetWPM() {
     var grossWPM = (typedEntries / 5) / (seconds / 10 / 60);
     var netWPM = grossWPM - (numErrors / seconds / 10 / 60);
+
+    firebaseRef.ref('typetests/').push({ typetest: "Passage", user: localStorage.getItem("user"), wpm: Math.round(netWPM * 100) / 100 });
+    var a = usersRef.orderByChild('username').equalTo(localStorage.getItem("user")).once('value').then(function (snapshot) {
+        snapshot.forEach(function (childSnapshot) {
+            var key = childSnapshot.key;
+            var childData = childSnapshot.val();
+            var tempUsername = childData.username;
+            var tempPassword = childData.password;
+            var tempEmail = childData.email;
+            var tempNumberOfTests = childData.numberOfTests + 1;
+            var tempAvgWPM = (childData.avgWPM * childData.numberOfTests)
+                            + (Math.round(netWPM * 100) / 100) / (tempNumberOfTests);
+            window.alert(key);
+            firebaseRef.ref('users/').child(key).set({ username: tempUser, password: tempPass, email: tempEmail, avgWPM: tempAvgWPM, numberOfTests: tempNumberOfTests });
+
+        });
+    });
+    firebaseRef.value = '';
+
     return Math.round(netWPM * 100) / 100
 }

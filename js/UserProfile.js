@@ -58,7 +58,7 @@ function signUpClick() {
     var pass = document.getElementById("psw").value;
     var mail = document.getElementById("email").value;
 
-    firebaseRef.ref('users/').set({ username: user, password: pass, email: mail });
+    firebaseRef.ref('users/').set({ username: user, password: pass, email: mail, avgWPM: 0, numberOfTests: 0 });
     firebaseRef.value = '';
 
     if (typeof (Storage) !== "undefined") {
@@ -75,7 +75,17 @@ function saveTest() {
     //var wpm = document.getElementById("").value;
 
     firebaseRef.ref('typetests/').push({ typetest: "Traditional", user: localStorage.getItem("user"), wpm: 92 });
+    var a = usersRef.orderByChild('username').equalTo(user).once('value').then(function (snapshot) {
+        snapshot.forEach(function (childSnapshot) {
+            var key = childSnapshot.key;
+            var childData = childSnapshot.val();
 
+            document.getElementById("emailGoesHere").innerHTML = childData.email;
+            document.getElementById("avgWPM").innerHTML = childData.avgWPM;
+            document.getElementById("numberOfTests").innerHTML = childData.numberOfTests;
+
+        });
+    });
     firebaseRef.value = '';
 }
 
@@ -111,7 +121,7 @@ function forUserProfile() {
         snapshot.forEach(function (childSnapshot) {
             var key = childSnapshot.key;
             var childData = childSnapshot.val();
-
+            window.alert(key);
             document.getElementById("emailGoesHere").innerHTML = childData.email;
             document.getElementById("avgWPM").innerHTML = childData.avgWPM;
             document.getElementById("numberOfTests").innerHTML = childData.numberOfTests;
