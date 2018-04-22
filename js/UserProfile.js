@@ -7,12 +7,15 @@ var modal = document.getElementById('id01');
 var signup = document.getElementById('id02');
 
 function myFunction() {
-
     if (typeof (Storage) !== "undefined") {
         if (localStorage.getItem("user") !== "Guest") {
             document.getElementById("userNameHere").innerHTML = localStorage.getItem("user");
         } else {
             document.getElementById("userNameHere").innerHTML = "Guest";
+            document.getElementById("loginbutton").style.display = 'inline-block';
+            document.getElementById("signupbutton").style.display = 'inline-block';
+            document.getElementById("logoutbutton").style.display = 'none';
+
         }
         document.getElementById("userNameHere").innerHTML = localStorage.getItem("user");
     } else {
@@ -53,11 +56,41 @@ messagesRef.onAuth(function (authData) {
 });
 
 
-function signUpClick() {
-    var user = document.getElementById("usname").value;
-    var pass = document.getElementById("psw").value;
-    var mail = document.getElementById("email").value;
+function signUpClick(user, pass, pass2, mail) {
+    window.alert(user + " " + pass + " " + mail);
+    if (user == "" || pass == "" || pass2 == "" || mail == "") {
+        window.alert("Check your information again.");
+        return;
+    }
 
+    if (pass != pass2) {
+        window.alert("Passwords do not match.");
+        return;
+    }
+    var a = usersRef.orderByChild("username").equalTo(avgWPM).once('value').then(function (snapshot) {
+        if (snapshot.val() !== null){
+            window.alert("user exists");
+            return;
+        }
+    });
+
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!re.test(String(mail).toLowerCase())) {
+        window.alert("Double check your email.");
+    }
+    var b = usersRef.orderByChild("email").equalTo(mail).once('value').then(function (snapshot) {
+        if (snapshot.val() !== null){
+            window.alert("email exists");
+
+            return;
+        }
+    });
+
+    window.alert("End of signUpClick");
+}
+
+  
+function newUser(user, pass, pass2, mail) {
     firebaseRef.ref('users/').push({ username: user, password: pass, email: mail, avgWPM: 0, numberOfTests: 0 });
     firebaseRef.value = '';
 
@@ -67,13 +100,12 @@ function signUpClick() {
     } else {
         document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
     }
-    soFreshAndSoClean();
 
+    soFreshAndSoClean();
 }
 
 function saveTest() {
     //var wpm = document.getElementById("").value;
-
     firebaseRef.ref('typetests/').push({ typetest: "Traditional", user: localStorage.getItem("user"), wpm: 92 });
     var a = usersRef.orderByChild('username').equalTo(user).once('value').then(function (snapshot) {
         snapshot.forEach(function (childSnapshot) {
@@ -89,15 +121,31 @@ function saveTest() {
     firebaseRef.value = '';
 }
 
-function signIn() {
-    if (typeof (Storage) !== "undefined") {
-        var user = document.getElementById('uname').value;
-        localStorage.setItem("user", user);
-        document.getElementById("userNameHere").innerHTML = localStorage.getItem("user");
-    } else {
-        document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
-    }
-    soFreshAndSoClean();
+function signIn(user, pass) {
+    var a = usersRef.orderByChild("username").equalTo(user).once('value').then(function (snapshot) {
+        if (snapshot.exists()) {
+            snapshot.forEach(function (childSnapshot) {
+                var key = childSnapshot.key;
+                var childData = childSnapshot.val();
+
+                if (childData.username == user && childData.password == pass) {
+                    if (typeof (Storage) !== "undefined") {
+                        localStorage.setItem("user", user);
+                        document.getElementById("userNameHere").innerHTML = localStorage.getItem("user");
+                        soFreshAndSoClean();
+                    } else {
+                        document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+                    }
+                } else {
+                    window.alert("Check your information again.");
+                }
+            });
+        } else {
+            window.alert("Check your information again.");
+        }
+    });
+    firebaseRef.value = '';
+
 }
 
 function signOut() {
@@ -121,7 +169,6 @@ function forUserProfile() {
         snapshot.forEach(function (childSnapshot) {
             var key = childSnapshot.key;
             var childData = childSnapshot.val();
-            window.alert(key);
             document.getElementById("emailGoesHere").innerHTML = childData.email;
             document.getElementById("avgWPM").innerHTML = childData.avgWPM;
             document.getElementById("numberOfTests").innerHTML = childData.numberOfTests;
@@ -131,17 +178,16 @@ function forUserProfile() {
 }
 
 function appendTests() {
-    window.alert("A");
     var user = localStorage.getItem("user");
     var example = document.getElementById("userInfoTest").value;
     var a = typeRef.orderByChild('user').equalTo(user).once('value').then(function (snapshot) {
         snapshot.forEach(function (childSnapshot) {
             var key = childSnapshot.key;
             var childData = childSnapshot.val();
-
-            window.alert(childData.wpm);
-
-
+            var pre = document.createElement('li');
+            pre.id = childData.name;
+            pre.innerText = JSON.parse(JSON.stringify(childData.typetest + ": " + childData.wpm + "WPM"));
+            document.getElementById('testsList').appendChild(pre);
         });
     });
 

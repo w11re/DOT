@@ -10,12 +10,12 @@ var userId = 0;
 
 
 //tasks to run upon page launch
-$(document).ready(function() {
+$(document).ready(function () {
     $(".alert").hide();
     genParagraph();
 
 
-    $(".resetBtn").click(function() {
+    $(".resetBtn").click(function () {
 
         currPassage = 0;
         currIndex = 0;
@@ -37,7 +37,7 @@ $(document).ready(function() {
         genParagraph();
     });
 
-    $(document).click(function(e) {
+    $(document).click(function (e) {
         if (seconds > 0) {
             $(".alert").show("fast");
         }
@@ -53,7 +53,7 @@ function genParagraph() {
     $(".passage").empty();
 
     $(".passage").append("<p>");
-    $.each(tempPassages, function(index, value) {
+    $.each(tempPassages, function (index, value) {
         $(".passage").append(value + " ");
     });
     $(".passage").append("</p>");
@@ -62,10 +62,13 @@ function genParagraph() {
 
 function genPassages() {
     var passageList = [
-        "AAAAAA"    
+        "We believe that we can change the things around us in accordance with our desires—we believe it because otherwise we can see no favourable outcome. We do not think of the outcome which generally comes to pass and is also favourable: we do not succeed in changing things in accordance with our desires, but gradually our desires change.", 
+        "Hello babies. Welcome to Earth. It’s hot in the summer and cold in the winter. It’s round and wet and crowded. On the outside, babies, you’ve got a hundred years here. There’s only one rule that I know of.",
+        "Just remember that the things you put into your head are there forever, he said. You might want to think about that. You forget some things, dont you? Yes. You forget what you want to remember and you remember what you want to forget.",
+        "I remember when I remember, I remember when I lost my mind. There was something so pleasant about that place. Even your emotions have an echo in so much space. And when you're out there, without care, yeah I was out of touch. But it wasn't because I didn't know enough. I just knew too much. Does that make me crazy?",
+        "If you’re going to try, go all the way. Otherwise, don’t even start. This could mean losing girlfriends, wives, relatives and maybe even your mind. It could mean not eating for three or four days. It could mean freezing on a park bench. It could mean jail. It could mean derision. It could mean mockery–isolation. Isolation is the gift.",
+        "\"Have no fear, little fish\", said the Cat in the Hat. These Things are good Things. And he gave them a pat. They are tame. Oh, so tame! They have come here to play. They will give you some fun on this wet, wet, wet day.",
     ];
-
-    
 
     function passages(options) {
         function passage() {
@@ -76,11 +79,11 @@ function genPassages() {
             return Math.floor(Math.random() * lessThan);
         }
 
-        if (typeof(options) === 'undefined') {
+        if (typeof (options) === 'undefined') {
             return passage();
         }
 
-        if (typeof(options) === 'number') {
+        if (typeof (options) === 'number') {
             options = {
                 exactly: options
             };
@@ -112,7 +115,7 @@ var t;
 var stopped = 0;
 
 function Timer(event) {
-    $(".resetBtn").click(function() {
+    $(".resetBtn").click(function () {
         clearInterval(t);
         seconds = 0;
         timer = 0;
@@ -121,7 +124,7 @@ function Timer(event) {
     if (timer == 0 && event.which != 13 && stopped == 0) {
         $('h5').replaceWith("<h5>Time elapsed: " + seconds / 10 + " seconds.</h5>");
         timer = 1;
-        t = setInterval(function() {
+        t = setInterval(function () {
             startTime()
         }, 100);
         timer = 1;
@@ -253,16 +256,14 @@ function calcNetWPM() {
             var childData = childSnapshot.val();
             var tempNumberOfTests = childData.numberOfTests + 1;
             var tempAvgWPM = (((childData.avgWPM * childData.numberOfTests) + (Math.round(netWPM * 100) / 100)) / (tempNumberOfTests));
-            window.alert(tempAvgWPM);
 
-            firebaseRef.ref('users/' + key).set({ 
+            firebaseRef.ref('users/' + key).set({
                 username: childData.username,
                 password: childData.password,
                 email: childData.email,
-                avgWPM: tempAvgWPM, 
-                numberOfTests: tempNumberOfTests 
+                avgWPM: tempAvgWPM,
+                numberOfTests: tempNumberOfTests
             });
-            window.alert("a");
         });
     });
     firebaseRef.value = '';

@@ -56,13 +56,13 @@
                 <h3 id="userNameHere">
                     <h3>
                         <!-- Login button form -->
-                        <h4 onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</h4>
+                        <h4 onclick="document.getElementById('id01').style.display='block'" style="display: none;width:auto;" id="loginbutton">Login</h4>
                         <!-- End of Login button form -->
                         <!-- Logout button -->
-                        <h4 onclick="signOut()">Logout</h4>
+                        <h4 onclick="signOut()" id="logoutbutton">Logout</h4>
                         <!-- Login button form -->
                         <br />
-                        <h4 onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</h4>
+                        <h4 onclick="document.getElementById('id02').style.display='block'" style="display: none;width:auto;" id="signupbutton">Sign Up</h4>
             </div>
             <div id="menu">
                 <ul>
@@ -84,21 +84,21 @@
                 <h4>Select one of the typing tests below</h4>
             </div>
             <div id="testboxes">
-                <a href="Traditional.html" title="Traditional Typing Test">
-                    <button id="tb1" class="animate">Traditional</button>
+                <a href="Traditional.html" title="Easy Traditional Typing Test">
+                    <button id="tb1" class="animate">Easy Traditional</button>
+                </a>
+                <br>
+                <br>
+                <br>
+                <a href="Hard.html" title="Hard Traditional Typing Test">
+                    <button style="display: none" id="tb2" class="animateD2"> Hard Traditional</button>
                 </a>
                 <br>
                 <br>
                 <br>
                 <a href="Passage.html" title="Passage Typing Test">
-                    <button style="display: none" id="tb2" class="animateD1 setTimeout(myFunction, 3000)"> Passage</button>
-                </a>
-                <br>
-                <br>
-                <br>
-                <a href="#" title="Conveyor Belt Typing Test">
-                    <button style="display: none" id="tb3" class="animateD2"> Conveyor Belt </button>
-                </a>
+                        <button style="display: none" id="tb3" class="animateD1 setTimeout(myFunction, 3000)"> Passage</button>
+                    </a>
 
             </div>
 

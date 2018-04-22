@@ -54,15 +54,15 @@
                 </span>
                 <br />
                 <h3 id="userNameHere">
-                </h3>
-                <!-- Login button form -->
-                <h4 onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</h4>
-                <!-- End of Login button form -->
-                <!-- Logout button -->
-                <h4 onclick="signOut()">Logout</h4>
-                <!-- Login button form -->
-                <br />
-                <h4 onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</h4>
+                    <h3>
+                        <!-- Login button form -->
+                        <h4 onclick="document.getElementById('id01').style.display='block'" style="display: none;width:auto;" id="loginbutton">Login</h4>
+                        <!-- End of Login button form -->
+                        <!-- Logout button -->
+                        <h4 onclick="signOut()" id="logoutbutton">Logout</h4>
+                        <!-- Login button form -->
+                        <br />
+                        <h4 onclick="document.getElementById('id02').style.display='block'" style="display: none;width:auto;" id="signupbutton">Sign Up</h4>
             </div>
             <div id="menu">
                 <ul>
@@ -78,7 +78,7 @@
                 </ul>
             </div>
         </div>
-        
+
         <div id="main">
             <div id="loader"></div>
             <div style="display: none" id="typing" class="animate-bottom">
@@ -87,7 +87,7 @@
                 </a>
 
                 <div class="title">
-                    <h2 onclick="saveTest()">Simple Type Test</h2>
+                    <h2 onclick="saveTest()">Easy Traditional Type Test</h2>
                     <h4>
                         <u>Type the words below</u>
                     </h4>

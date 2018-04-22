@@ -131,10 +131,6 @@ p {
 
 /* Menu */
 
-#menu {}
-
-#menu ul {}
-
 #menu li {
 	border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -285,7 +281,7 @@ p {
     display: inline;
     vertical-align: top;
     font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 28px;
 
 }
@@ -304,6 +300,29 @@ p {
 #testboxes {
 	
 }
+
+#typetests ul{
+	height: 200px; 
+	width:40%;
+	overflow-y:scroll;
+}
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+	background: rgba(185, 185, 185, 0.849); 
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 100, 158, 0.849); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
 #testboxes button {
     position: relative;
     background-color: #0099ff;
@@ -370,6 +389,10 @@ input[type=text], input[type=password] {
     color: white;
 }
 
+#logo #userNameHere {
+	font-size: 25px;
+}
+
 #logo .container {
     padding: 16px;
 }
@@ -383,6 +406,21 @@ input[type=text], input[type=password] {
 .modal, .signup{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    right: 0;
+    top: 0;
+    text-align: center;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+	background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+	padding-right: 15%;
+    padding-top: 5%;
+}
+
+.userNotLogged {
+	display: none;
+	position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     right: 0;
     top: 0;

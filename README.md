@@ -24,11 +24,9 @@ Typically, installing will not be necessary. The user can just clone the github 
 
 ## Built With
 
-* [Eclipse](https://www.eclipse.org/) - Backend
-* [MySQL](https://www.mysql.com/) - Database Dependency
-* [JDBC](http://www.oracle.com/technetwork/java/javase/jdbc/index.html) - Database Connection
-* [Tomcat](http://tomcat.apache.org/) - Java Servlet, Server Pages, WebSocket Technology
-* [Maven](https://maven.apache.org/download.cgi) - Web Application building
+* [Firebase](https://firebase.google.com/) - Database/Backend interaction
+* [HTML/JavaScript] Reference: https://www.w3schools.com
+
 
 ## Contributing
 
