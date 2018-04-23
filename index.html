@@ -52,7 +52,8 @@
           <u>Digital Online Typing</u>
         </span>
         <br />
-        <h3 id="userNameHere"><h3>
+        <h3 id="userNameHere">
+          <h3>
             <!-- Login button form -->
             <h4 onclick="document.getElementById('id01').style.display='block'" style="display: none;width:auto;" id="loginbutton">Login</h4>
             <!-- End of Login button form -->
@@ -110,9 +111,9 @@
           <b>Password</b>
         </label>
         <br />
-        <input type="password" id="psw" name="psw" maxlength="16" size="16" required>
+        <input type="password" name="psw" maxlength="16" size="16" required>
         <p></p>
-        <button type="button" onclick="signIn(uname, psw)" class="loginbtn">Login</button>
+        <button type="button" value="submit" onclick="signIn(uname.value, psw.value)" class="loginbtn">Login</button>
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
       </div>
     </form>
@@ -136,7 +137,7 @@
           <b>Confirm Password</b>
         </label>
         <br />
-        <input type="password" name="psw2" maxlength="16" size="16" required>
+        <input type="password" id="psw2" name="psw2" maxlength="16" size="16" required>
         <br />
         <label for="email">
           <b>Email</b>
@@ -144,7 +145,7 @@
         <br />
         <input type="text" id="email" name="email" maxlength="30" size="30" required>
         <br />
-        <button type="submit" onclick="signUpClick()" class="loginbtn">Sign Up</button>
+        <button type="button" value="submit" onclick="signUpClick(usname.value, psw.value, psw2.value, email.value)" class="loginbtn">Sign Up</button>
         <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
       </div>
     </form>

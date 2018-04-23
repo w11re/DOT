@@ -19,8 +19,6 @@
     <link href="default.css" rel="stylesheet" type="text/css" media="all" />
     <!--jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <!--Local script-->
-    <script src="js/Typing.js"></script>
     <!--[if IE 6]>
       <link href="default_ie6.css" rel="stylesheet" type="text/css" />
       <![endif]-->
@@ -97,8 +95,8 @@
                 <br>
                 <br>
                 <a href="Passage.html" title="Passage Typing Test">
-                        <button style="display: none" id="tb3" class="animateD1 setTimeout(myFunction, 3000)"> Passage</button>
-                    </a>
+                    <button style="display: none" id="tb3" class="animateD1 setTimeout(myFunction, 3000)"> Passage</button>
+                </a>
 
             </div>
 
@@ -124,7 +122,7 @@
                 <br />
                 <input type="password" name="psw" maxlength="16" size="16" required>
                 <p></p>
-                <button type="submit" onclick="signIn()" class="loginbtn">Login</button>
+                <button type="button" value="submit" onclick="signIn(uname.value, psw.value)" class="loginbtn">Login</button>
                 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
             </div>
         </form>
@@ -148,7 +146,7 @@
                     <b>Confirm Password</b>
                 </label>
                 <br />
-                <input type="password" name="psw2" maxlength="16" size="16" required>
+                <input type="password" id="psw2" name="psw2" maxlength="16" size="16" required>
                 <br />
                 <label for="email">
                     <b>Email</b>
@@ -156,7 +154,7 @@
                 <br />
                 <input type="text" id="email" name="email" maxlength="30" size="30" required>
                 <br />
-                <button type="submit" onclick="signUpClick()" class="loginbtn">Sign Up</button>
+                <button type="button" value="submit" onclick="signUpClick(usname.value, psw.value, psw2.value, email.value)" class="loginbtn">Sign Up</button>
                 <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
             </div>
         </form>

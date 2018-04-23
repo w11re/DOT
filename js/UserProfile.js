@@ -37,27 +37,8 @@ window.onclick = function (event) {
     }
 }
 
-// For user authentication
-function authHandler(error, authData) {
-    if (error) {
-        console.log('Login Failed!', error);
-    } else {
-    }
-}
-
-// Log the user in with an email combination
-messagesRef.authWithPassword({
-    email: 'lil',
-    password: 'xan'
-}, authHandler);
-
-messagesRef.onAuth(function (authData) {
-    userId = authData.uid;
-});
-
 
 function signUpClick(user, pass, pass2, mail) {
-    window.alert(user + " " + pass + " " + mail);
     if (user == "" || pass == "" || pass2 == "" || mail == "") {
         window.alert("Check your information again.");
         return;
@@ -67,29 +48,50 @@ function signUpClick(user, pass, pass2, mail) {
         window.alert("Passwords do not match.");
         return;
     }
-    var a = usersRef.orderByChild("username").equalTo(avgWPM).once('value').then(function (snapshot) {
-        if (snapshot.val() !== null){
-            window.alert("user exists");
+    var a = usersRef.orderByChild("username").equalTo(user).once('value').then(function (snapshot) {
+        if (snapshot.val() !== null) {
+            window.alert("This Username is taken.");
             return;
+        } else {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if (!re.test(String(mail).toLowerCase())) {
+            } else {
+                var b = usersRef.orderByChild("email").equalTo(mail).once('value').then(function (snapshot) {
+                    if (snapshot.val() !== null) {
+
+                        return;
+                    } else {
+                        newUser(user, pass, pass2, mail);
+                    }
+                });
+            }
         }
     });
 
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!re.test(String(mail).toLowerCase())) {
         window.alert("Double check your email.");
+    } else {
+        var b = usersRef.orderByChild("email").equalTo(mail).once('value').then(function (snapshot) {
+            if (snapshot.val() !== null) {
+                window.alert("This Email address is taken.");
+
+                return;
+            } else {
+                var a = usersRef.orderByChild("username").equalTo(user).once('value').then(function (snapshot) {
+                    if (snapshot.val() !== null) {
+                        return;
+
+                    } else {
+                        newUser(user, pass, pass2, mail);
+                    }
+                });
+            }
+        });
     }
-    var b = usersRef.orderByChild("email").equalTo(mail).once('value').then(function (snapshot) {
-        if (snapshot.val() !== null){
-            window.alert("email exists");
-
-            return;
-        }
-    });
-
-    window.alert("End of signUpClick");
 }
 
-  
+
 function newUser(user, pass, pass2, mail) {
     firebaseRef.ref('users/').push({ username: user, password: pass, email: mail, avgWPM: 0, numberOfTests: 0 });
     firebaseRef.value = '';
