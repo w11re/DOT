@@ -393,10 +393,6 @@ input[type=text], input[type=password] {
 	font-size: 25px;
 }
 
-#logo .container {
-    padding: 16px;
-}
-
 #logo span.psw {
     float: right;
     padding-top: 16px;
@@ -441,6 +437,15 @@ input[type=text], input[type=password] {
     border: 1px solid #888;
     width: 50%; /* Could be more or less, depending on screen size */
 
+}
+
+.errors {
+    color: red;
+
+}
+
+.errors p {
+	line-height: 0;
 }
 
 #loader {

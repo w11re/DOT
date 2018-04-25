@@ -39,18 +39,19 @@ window.onclick = function (event) {
 
 
 function signUpClick(user, pass, pass2, mail) {
+
     if (user == "" || pass == "" || pass2 == "" || mail == "") {
-        window.alert("Check your information again.");
+            document.getElementById("mod1").style.display = 'inline-block';
         return;
     }
 
     if (pass != pass2) {
-        window.alert("Passwords do not match.");
+            document.getElementById("mod2").style.display = 'inline-block';
         return;
     }
     var a = usersRef.orderByChild("username").equalTo(user).once('value').then(function (snapshot) {
         if (snapshot.val() !== null) {
-            window.alert("This Username is taken.");
+            document.getElementById("mod3").style.display = 'inline-block';
             return;
         } else {
             var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -70,11 +71,11 @@ function signUpClick(user, pass, pass2, mail) {
 
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!re.test(String(mail).toLowerCase())) {
-        window.alert("Double check your email.");
+            document.getElementById("mod4").style.display = 'inline-block';
     } else {
         var b = usersRef.orderByChild("email").equalTo(mail).once('value').then(function (snapshot) {
             if (snapshot.val() !== null) {
-                window.alert("This Email address is taken.");
+            document.getElementById("mod5").style.display = 'inline-block';
 
                 return;
             } else {
@@ -139,11 +140,11 @@ function signIn(user, pass) {
                         document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
                     }
                 } else {
-                    window.alert("Check your information again.");
+            document.getElementById("mod0").style.display = 'inline-block';
                 }
             });
         } else {
-            window.alert("Check your information again.");
+            document.getElementById("mod0").style.display = 'inline-block';
         }
     });
     firebaseRef.value = '';
@@ -158,6 +159,16 @@ function signOut() {
         document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
     }
     location.reload();
+}
+
+function hideErrors() {
+    document.getElementById("mod0").style.display = 'none';
+    document.getElementById("mod1").style.display = 'none';
+    document.getElementById("mod2").style.display = 'none';
+    document.getElementById("mod3").style.display = 'none';
+    document.getElementById("mod4").style.display = 'none';
+    document.getElementById("mod5").style.display = 'none';
+
 }
 
 function soFreshAndSoClean() {

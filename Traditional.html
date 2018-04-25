@@ -109,58 +109,68 @@
             </div>
         </div>
     </div>
-    <div id="id01" class="modal">
-        <form id="login" class="modal-content animate" method="post">
-            <div class="container">
-                <label for="uname">
-                    <b>Username</b>
-                </label>
-                <br />
-                <input type="text" id="uname" name="uname" maxlength="16" size="16" required>
-                <br />
-                <label for="psw">
-                    <b>Password</b>
-                </label>
-                <br />
-                <input type="password" name="psw" maxlength="16" size="16" required>
-                <p></p>
-                <button type="button" value="submit" onclick="signIn(uname.value, psw.value)" class="loginbtn">Login</button>
-                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-            </div>
-        </form>
-    </div>
-    <div id="id02" class="signup">
-        <form id="signup" class="modal-content animate" method="post">
-            <div class="container">
-                <label for="usname">
-                    <b>Username</b>
-                </label>
-                <br />
-                <input type="text" id="usname" name="usname" maxlength="16" size="16" required>
-                <br />
-                <label for="psw">
-                    <b>Password</b>
-                </label>
-                <br />
-                <input type="password" id="psw" name="psw" maxlength="16" size="16" required>
-                <br />
-                <label for="psw2">
-                    <b>Confirm Password</b>
-                </label>
-                <br />
-                <input type="password" id="psw2" name="psw2" maxlength="16" size="16" required>
-                <br />
-                <label for="email">
-                    <b>Email</b>
-                </label>
-                <br />
-                <input type="text" id="email" name="email" maxlength="30" size="30" required>
-                <br />
-                <button type="button" value="submit" onclick="signUpClick(usname.value, psw.value, psw2.value, email.value)" class="loginbtn">Sign Up</button>
-                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-            </div>
-        </form>
-    </div>
+  <div id="id01" class="modal">
+    <form id="login" class="modal-content animate" method="post">
+      <div id="modalContainer">
+        <div class="errors">
+            <p id="mod0" style="display: none" class="animate-top"> You've entered an incorrect username/password combination.</p>
+        </div>
+        <label for="uname">
+          <b>Username</b>
+        </label>
+        <br />
+        <input type="text" id="uname" name="uname" maxlength="16" size="16" required>
+        <br />
+        <label for="psw">
+          <b>Password</b>
+        </label>
+        <br />
+        <input type="password" name="psw" maxlength="16" size="16" required>
+        <p></p>
+        <button type="button" value="submit" onclick="hideErrors(); signIn(uname.value, psw.value)" class="loginbtn">Login</button>
+        <button type="button" onclick="document.getElementById('id01').style.display='none'; hideErrors()" class="cancelbtn">Cancel</button>
+      </div>
+    </form>
+  </div>
+  <div id="id02" class="signup">
+    <form id="signup" class="modal-content animate" method="post">
+      <div id="modalContainer">
+        <div class="errors">
+            <p id="mod1" style="display: none"> Check your information again. </p>
+            <p id="mod2" style="display: none"> Passwords do not match.</p>
+            <p id="mod3" style="display: none"> Username is taken. </p>
+            <p id="mod4" style="display: none"> Double check your email. </p>
+            <p id="mod5" style="display: none"> Email is taken. </p>
+        </div>
+        <label for="usname">
+          <b>Username</b>
+        </label>
+        <br />
+        <input type="text" id="usname" name="usname" maxlength="16" size="16" required>
+        <br />
+        <label for="psw">
+          <b>Password</b>
+        </label>
+        <br />
+        <input type="password" id="psw" name="psw" maxlength="16" size="16" required>
+        <br />
+        <label for="psw2">
+          <b>Confirm Password</b>
+        </label>
+        <br />
+        <input type="password" id="psw2" name="psw2" maxlength="16" size="16" required>
+        <br />
+        <label for="email">
+          <b>Email</b>
+        </label>
+        <br />
+        <input type="text" id="email" name="email" maxlength="30" size="30" required>
+        <br />
+        <button type="button" value="submit" onclick="hideErrors(); signUpClick(usname.value, psw.value, psw2.value, email.value)" class="loginbtn">Sign Up</button>
+        <button type="button" onclick="document.getElementById('id02').style.display='none'; hideErrors()" class="cancelbtn">Cancel</button>
+      </div>
+    </form>
+  </div>
 
 
     <script>
